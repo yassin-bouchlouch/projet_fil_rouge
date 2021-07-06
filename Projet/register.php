@@ -1,5 +1,9 @@
 <?php
-include('includes/handlers/register-handler.php')
+include('includes/classes/Account.php');
+$account =new Account();
+
+include('includes/handlers/register-handler.php');
+include('includes/handlers/login-handler.php');
 ?>
 
 <html>
