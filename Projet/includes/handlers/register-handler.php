@@ -18,10 +18,6 @@ function sanitizeFormString($inputText) {
 	return $inputText;
 }
 
-if(isset($_POST['loginButton'])) {
-	//Login button was pressed
-	
-}
 
 if(isset($_POST['registerButton'])) {
 	//Register button was pressed
@@ -33,7 +29,13 @@ if(isset($_POST['registerButton'])) {
 	$password = sanitizeFormPassword($_POST['password']);
 	$password2 = sanitizeFormPassword($_POST['password2']);
 
-	$account->register($username,$firstName,$lastName,$email,$email2,$password,$password2);
+	$wasSuccessful = $account->register($username, $firstName, $lastName, $email, $email2, $password, $password2);
+
+	if($wasSuccessful == true) {
+		$_SESSION['userLoggedIn'] = $username;
+		header("Location: index.php");
+	}
+
 }
 
 
