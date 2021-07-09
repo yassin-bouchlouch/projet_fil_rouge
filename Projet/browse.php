@@ -1,8 +1,9 @@
 <?php 
 include("includes/includedFiles.php"); 
 ?>
-
+<a class='logout' href="../includes/handlers/ajax/logout.php"><img class='logout' src='assets/images/icons/signout.svg'>Logout</a>
 <h1 class="pageHeadingBig">You Might Also Like</h1>
+
 
 <div class="gridViewContainer">
 

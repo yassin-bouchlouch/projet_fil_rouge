@@ -19,6 +19,7 @@ else {
 
 <body>
 	Hello!
+	<div class="text-center">Want to Leave the Page? <br><a href="../includes/handlers/logout.php">Logout</a></div>
 </body>
 
 </html>

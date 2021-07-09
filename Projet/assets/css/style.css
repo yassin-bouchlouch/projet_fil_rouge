@@ -22,7 +22,12 @@ body {
 
 #nowPlayingBarContainer {
 	width: 100%;
-    background-color: #282828;
+    /* background-color: #282828; */
+    
+    background: linear-gradient( to right bottom, rgba(0, 0, 0, 0.438), rgba(0, 0, 0, 0.26) );
+    backdrop-filter: blur(2rem);
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.253), 0 6px 6px rgba(0, 0, 0, 0.397);
     bottom: 0;
     position: fixed;
     min-width: 620px;
@@ -86,7 +91,7 @@ body {
 }
 
 .progressTime {
-	color: #a0a0a0;
+	color: #ffffff;
     font-size: 11px;
     min-width: 40px;
     text-align: center;
@@ -111,7 +116,7 @@ body {
 }
 
 .progress {
-	background-color: #a0a0a0;
+	background-color: #f24B4B;
     height: 4px;
     width: 0;
     border-radius: 2px;
@@ -160,7 +165,9 @@ body {
 }
 
 #navBarContainer {
-	background-color: #000;
+    background: linear-gradient( to right bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) );
+    backdrop-filter: blur(2rem);
+    
     width: 220px;
     height: 100vh;
     position: fixed;
@@ -225,7 +232,7 @@ body {
 
 .pageHeadingBig {
     padding: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 .gridViewItem {
@@ -524,4 +531,17 @@ input:focus {
 .userDetails .container .message {
     color: #f24B4B;
     font-weight: 300;
+}
+a.logout{
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    margin-top: 10vh;
+    margin-right: 10vw;
+    align-items: center;
+}
+img.logout{
+    width:25px;
+    color : #f24B4B;
+    cursor: pointer;
 }
