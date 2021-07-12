@@ -18,6 +18,11 @@
 			$artist = mysqli_fetch_array($artistQuery);
 			return $artist['name'];
 		}
+		public function getPodcasterEmail() {
+			$artistQuery = mysqli_query($this->con, "SELECT Email FROM artists WHERE id='$this->id'");
+			$artist = mysqli_fetch_array($artistQuery);
+			return $artist['Email'];
+		}
 		
 		public function getSongIds() {
 

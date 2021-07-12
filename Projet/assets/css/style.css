@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 html, body {
 	padding: 0;
 	margin: 0;
@@ -9,7 +11,7 @@ html, body {
 }
 
 * {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	color: #fff;
     letter-spacing: 1px;
 }
@@ -38,6 +40,7 @@ body {
     height: 90px;
     padding: 16px;
     box-sizing: border-box;
+    border-radius: 10px 10px 0 0;
 }
 
 #nowPlayingLeft,
@@ -132,6 +135,7 @@ body {
     margin-right: 15px;
     float: left;
     background-size: cover;
+    border-radius: 10px;
 }
 
 #nowPlayingLeft .trackInfo {
@@ -198,10 +202,12 @@ body {
 .navItem {
     padding: 10px 0;
     font-size: 14px;
-    font-weight: 700;
-    display: block;
+    font-weight: 400;
+    display: flex;
     letter-spacing: 1px;
     position: relative;
+    align-items: center;
+    width: 100%;
 }
 
 .navItemLink {
@@ -211,6 +217,10 @@ body {
 
 .navItemLink:hover {
     color: #ffffff;
+}
+.navItem:hover {
+    background-color: #333;
+    color: #fff;
 }
 
 .navItemLink .icon {
@@ -246,6 +256,7 @@ body {
 
 .gridViewItem img {
     width: 100%;
+    border-radius: 10px;
 }
 
 .gridViewInfo {
@@ -275,6 +286,7 @@ body {
 
 .entityInfo .leftSection img {
     width: 100%;
+    border-radius: 10px;
 }
 
 .entityInfo .rightSection {
@@ -371,19 +383,17 @@ body {
     margin-bottom: 7px;
 }
 
-.artistInfo {
-    text-align: center;
-}
+
 
 .button {
     color: #fff;
     cursor: pointer;
     margin-bottom: 10px;
     background-color: transparent;
-    font-weight: 500;
+    font-weight: 300;
     letter-spacing: 2px;
-    border: 2px solid #fff;
-    border-radius: 500px;
+    border: 2px solid #f24B4B;
+    border-radius: 10px;
     padding: 15px;
     min-width: 130px;
 }
@@ -469,7 +479,7 @@ input:focus {
     background-color: #282828;
     width: 200px;
     border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 3px;
+    border-radius: 10px;
     z-index: 1000;
     display: none;
 }
@@ -498,16 +508,9 @@ input:focus {
     -moz-appearance: none;
 }
 
-.userInfo h1 {
-    text-align: center;
-}
 
 .userDetails {
     padding: 20px;
-}
-
-.userDetails .container h2 {
-    text-align: center;
 }
 
 .userDetails .container input[type="text"],
@@ -532,16 +535,47 @@ input:focus {
     color: #f24B4B;
     font-weight: 300;
 }
-a.logout{
-    display: flex;
-    justify-content: flex-end;
+span.logout{
+    
     text-decoration: none;
-    margin-top: 10vh;
-    margin-right: 10vw;
     align-items: center;
-}
-img.logout{
-    width:25px;
-    color : #f24B4B;
     cursor: pointer;
+}
+img.icon {
+    width: 16px;
+    cursor: pointer;
+    margin-right: 1rem;
+    padding: 5px;
+}
+
+.profilePic{
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 2px solid #f24B4B;
+    height: 64px;
+    width: 64px;
+    margin: 0 15px;
+    margin: 0 auto;
+}
+
+.setting-profilePic{
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    border: 2px solid #f24B4B;
+    height: 200px;
+    width: 200px;
+    margin: 0 15px;
+    margin: 0 auto; 
+}
+.searchBar{
+    margin-top: 10vh;
+    width: 100%;
+    border: 1px solid #f24B4B;
+    border-radius: 10px;
+    display: flex;
+    padding: 10px 0;
+    position: relative;
+    align-items: center;
 }

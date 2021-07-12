@@ -106,7 +106,7 @@ $(function() {
 
 <div class="artistsContainer borderBottom">
 
-	<h2>ARTISTS</h2>
+	<h2>Podcasters</h2>
 
 	<?php
 	$artistsQuery = mysqli_query($con, "SELECT id FROM artists WHERE name LIKE '$term%' LIMIT 10");

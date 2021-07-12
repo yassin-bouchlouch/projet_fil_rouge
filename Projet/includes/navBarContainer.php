@@ -6,29 +6,36 @@
 		</span>
 
 
+		
+
 		<div class="group">
 
-			<div class="navItem">
-				<span role='link' tabindex='0' onclick='openPage("search.php")' class="navItemLink">
-					Search
-					<img src="assets/images/icons/search.png" class="icon" alt="Search">
-				</span>
-			</div>
-
+		<div class="navItem">
+			<img class='profilePic' src="<?php echo $userLoggedIn->getprofilePic(); ?>">
 		</div>
 
-		<div class="group">
+		<div class="navItem">
+				<img class='icon' src='assets/images/icons/home.svg'>
+				<span role="link" tabindex="0" onclick="openPage('settings.php')" class="navItemLink"><?php echo $userLoggedIn->getFirstName(); ?></span>
+			</div>
+
 			<div class="navItem">
+				<img class='icon' src='assets/images/icons/headphones.svg'>
 				<span role="link" tabindex="0" onclick="openPage('browse.php')" class="navItemLink">Browse</span>
 			</div>
 
 			<div class="navItem">
-				<span role="link" tabindex="0" onclick="openPage('yourMusic.php')" class="navItemLink">Your Music</span>
+				<img class='icon' src='assets/images/icons/heart.svg'>
+				<span role="link" tabindex="0" onclick="openPage('yourLikes.php')" class="navItemLink">Your Likes</span>
 			</div>
 
 			<div class="navItem">
-				<span role="link" tabindex="0" onclick="openPage('settings.php')" class="navItemLink"><?php echo $userLoggedIn->getFirstAndLastName(); ?></span>
+				<img class='icon' src='assets/images/icons/arrow-out-square.svg'>
+			<span role="link" tabindex="0" class="navItemLink" onclick="logout()">Logout</span>
 			</div>
+			
+
+	
 		</div>
 
 	</nav>

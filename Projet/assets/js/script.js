@@ -122,7 +122,7 @@ function createPlaylist() {
 			}
 
 			//do something when ajax returns
-			openPage("yourMusic.php");
+			openPage("yourLikes.php");
 		});
 
 	}
@@ -143,7 +143,7 @@ function deletePlaylist(playlistId) {
 			}
 
 			//do something when ajax returns
-			openPage("yourMusic.php");
+			openPage("yourLikes.php");
 		});
 
 

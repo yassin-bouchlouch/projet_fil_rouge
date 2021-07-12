@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 html, 
 body {
 	padding: 0;
@@ -21,7 +22,7 @@ body {
 
 #loginContainer * {
 	color: #fff;
-	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: normal;
 	line-height: 1em;
 	box-sizing: border-box;
@@ -85,7 +86,7 @@ body {
 #inputContainer button {
 	background-color: transparent;
     border: 2px solid #fff;
-    border-radius: 250px;
+    border-radius: 10px;
     color: #fff;
     display: block;
     font-size: 14px;

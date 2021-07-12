@@ -18,9 +18,10 @@ $artist = new Artist($con, $artistId);
 		<div class="artistInfo">
 
 			<h1 class="artistName"><?php echo $artist->getName(); ?></h1>
+			<p class="artistEmail"><?php echo $artist->getPodcasterEmail(); ?></p>
 
 			<div class="headerButtons">
-				<button class="button green" onclick="playFirstSong()">PLAY</button>
+				<button class="button" onclick="Follow()">Folow</button>
 			</div>
 
 		</div>
@@ -31,7 +32,7 @@ $artist = new Artist($con, $artistId);
 
 
 <div class="tracklistContainer borderBottom">
-	<h2>SONGS</h2>
+	<h2>Podcasts</h2>
 	<ul class="tracklist">
 		
 		<?php

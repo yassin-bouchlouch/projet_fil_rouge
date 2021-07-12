@@ -24,6 +24,15 @@
 			$row = mysqli_fetch_array($query);
 			return $row['name'];
 		}
-
+		public function getFirstName() {
+			$query = mysqli_query($this->con, "SELECT firstName FROM users WHERE username='$this->username'");
+			$row = mysqli_fetch_array($query);
+			return $row['firstName'];
+		}
+		public function getprofilePic() {
+			$query = mysqli_query($this->con, "SELECT profilePic FROM users WHERE username='$this->username'");
+			$row = mysqli_fetch_array($query);
+			return $row['profilePic'];
+		}
 	}
 ?>

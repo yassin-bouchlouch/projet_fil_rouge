@@ -106,11 +106,6 @@ function nextSong() {
 	setTrack(trackToPlay, currentPlaylist, true);
 }
 
-function setRepeat() {
-	repeat = !repeat;
-	var imageName = repeat ? "repeat-active.png" : "repeat.png";
-	$(".controlButton.repeat img").attr("src", "assets/images/icons/" + imageName);
-}
 
 function setMute() {
 	audioElement.audio.muted = !audioElement.audio.muted;
@@ -118,23 +113,6 @@ function setMute() {
 	$(".controlButton.volume img").attr("src", "assets/images/icons/" + imageName);
 }
 
-function setShuffle() {
-	shuffle = !shuffle;
-	var imageName = shuffle ? "shuffle-active.png" : "shuffle.png";
-	$(".controlButton.shuffle img").attr("src", "assets/images/icons/" + imageName);
-
-	if(shuffle == true) {
-		//Randomize playlist
-		shuffleArray(shufflePlaylist);
-		currentIndex = shufflePlaylist.indexOf(audioElement.currentlyPlaying.id);
-	}
-	else {
-		//shuffle has been deactivated
-		//go back to regular playlist
-		currentIndex = currentPlaylist.indexOf(audioElement.currentlyPlaying.id);
-	}
-
-}
 
 function shuffleArray(a) {
     var j, x, i;
@@ -163,7 +141,7 @@ function setTrack(trackId, newPlaylist, play) {
 	}
 	pauseSong();
 
-	$.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data) {
+	$.post("includes/handlers/ajax/getPodcastsJson.php", { songId: trackId }, function(data) {
 
 		var track = JSON.parse(data);
 		$(".trackName span").text(track.title);
@@ -243,29 +221,25 @@ function pauseSong() {
 
 				<div class="buttons">
 
-					<button class="controlButton shuffle" title="Shuffle button" onclick="setShuffle()">
-						<img src="assets/images/icons/shuffle.png" alt="Shuffle">
-					</button>
+		
 
 					<button class="controlButton previous" title="Previous button" onclick="prevSong()">
-						<img src="assets/images/icons/previous.png" alt="Previous">
+						<img src="assets/images/icons/skip-back.svg" alt="Previous">
 					</button>
 
 					<button class="controlButton play" title="Play button" onclick="playSong()">
-						<img src="assets/images/icons/play.png" alt="Play">
+						<img src="assets/images/icons/play-circle.svg" alt="Play">
 					</button>
 
 					<button class="controlButton pause" title="Pause button" style="display: none;" onclick="pauseSong()">
-						<img src="assets/images/icons/pause.png" alt="Pause">
+						<img src="assets/images/icons/pause-circle.svg" alt="Pause">
 					</button>
 
 					<button class="controlButton next" title="Next button" onclick="nextSong()">
-						<img src="assets/images/icons/next.png" alt="Next">
+						<img src="assets/images/icons/skip-forward.svg" alt="Next">
 					</button>
 
-					<button class="controlButton repeat" title="Repeat button" onclick="setRepeat()">
-						<img src="assets/images/icons/repeat.png" alt="Repeat">
-					</button>
+			
 
 				</div>
 

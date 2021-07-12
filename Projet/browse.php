@@ -1,7 +1,13 @@
 <?php 
 include("includes/includedFiles.php"); 
 ?>
-<a class='logout' href="../includes/handlers/ajax/logout.php"><img class='logout' src='assets/images/icons/signout.svg'>Logout</a>
+
+<div class="searchBar">
+				<span role='link' tabindex='0' onclick='openPage("search.php")'>
+					Search
+					<img src="assets/images/icons/search.svg" class="icon search-icon" alt="Search">
+				</span>
+			</div>
 <h1 class="pageHeadingBig">You Might Also Like</h1>
 
 

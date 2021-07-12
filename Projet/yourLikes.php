@@ -5,10 +5,10 @@ include("includes/includedFiles.php");
 <div class="playlistsContainer">
 
 	<div class="gridViewContainer">
-		<h2>PLAYLISTS</h2>
+		<h2>Your Likes</h2>
 
 		<div class="buttonItems">
-			<button class="button green" onclick="createPlaylist()">NEW PLAYLIST</button>
+			<button class="button" onclick="createPlaylist()">NEW BUCKET</button>
 		</div>
 
 
@@ -19,7 +19,7 @@ include("includes/includedFiles.php");
 			$playlistsQuery = mysqli_query($con, "SELECT * FROM playlists WHERE owner='$username'");
 
 			if(mysqli_num_rows($playlistsQuery) == 0) {
-				echo "<span class='noResults'>You don't have any playlists yet.</span>";
+				echo "<span class='noResults'>it seems like You don't have any Likes yet.</span>";
 			}
 
 			while($row = mysqli_fetch_array($playlistsQuery)) {
