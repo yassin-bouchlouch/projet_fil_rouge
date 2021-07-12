@@ -6,11 +6,11 @@ if(isset($_POST['playlistId']) && isset($_POST['songId'])) {
 	$playlistId = $_POST['playlistId'];
 	$songId = $_POST['songId'];
 
-	$orderIdQuery = mysqli_query($con, "SELECT MAX(playlistOrder) + 1 as playlistOrder FROM playlistSongs WHERE playlistId='$playlistId'");
+	$orderIdQuery = mysqli_query($con, "SELECT MAX(playlistOrder) + 1 as playlistOrder FROM playlistPodcasts WHERE playlistId='$playlistId'");
 	$row = mysqli_fetch_array($orderIdQuery);
 	$order = $row['playlistOrder'];
 
-	$query = mysqli_query($con, "INSERT INTO playlistSongs VALUES('', '$songId', '$playlistId', '$order')");
+	$query = mysqli_query($con, "INSERT INTO playlistPodcasts VALUES('', '$songId', '$playlistId', '$order')");
 
 }
 else {

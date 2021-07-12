@@ -548,28 +548,6 @@ img.icon {
     margin-right: 1rem;
     padding: 5px;
 }
-
-.profilePic{
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    border: 2px solid #f24B4B;
-    height: 64px;
-    width: 64px;
-    margin: 0 15px;
-    margin: 0 auto;
-}
-
-.setting-profilePic{
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    border: 2px solid #f24B4B;
-    height: 200px;
-    width: 200px;
-    margin: 0 15px;
-    margin: 0 auto; 
-}
 .searchBar{
     margin-top: 10vh;
     width: 100%;

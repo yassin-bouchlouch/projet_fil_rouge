@@ -1,5 +1,5 @@
 <?php
-$songQuery = mysqli_query($con, "SELECT id FROM songs ORDER BY RAND() LIMIT 10");
+$songQuery = mysqli_query($con, "SELECT id FROM podcasts ORDER BY RAND() LIMIT 10");
 
 $resultArray = array();
 

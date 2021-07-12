@@ -2,6 +2,7 @@
 include("includes/includedFiles.php");
 ?>
 
+<link rel="stylesheet" href="./profile.css">
 <div class="entityInfo">
 
 	<div class="centerSection">
@@ -10,11 +11,19 @@ include("includes/includedFiles.php");
 
 	<div class="userDetails">
 
+	
 
 				<div class="container">
-					<img class='setting-profilePic' src="<?php echo $userLoggedIn->getprofilePic(); ?>">
-					<!-- <button class="button" onclick="updateprofilePic('profilePic')">SAVE</button> -->
+				<div class="profile-pic">
+				<label class="-label" for="file">
+					<span class="glyphicon glyphicon-camera"></span>
+					<span id="change" style="display:none">Change Image</span>
+				</label>
+				<input id="file" type="file" onchange="loadFile(event)"/>
+				<img class='setting-profilePic' id="output" src="<?php echo $userLoggedIn->getprofilePic(); ?>">
 				</div>
+				</div>
+
 				<div class="userInfo">
 					<h1><?php echo $userLoggedIn->getFirstAndLastName(); ?></h1>
 				</div>
@@ -38,3 +47,7 @@ include("includes/includedFiles.php");
 </div>
 
 </div>
+
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script> -->
+<script  src="./script.js"></script>

@@ -82,18 +82,18 @@
 	color: rgba(255, 255, 255, 0.3);
 }
 
-#oc-popular-songs .oc-item {
+#oc-popular-podcasts .oc-item {
 	-webkit-transition: transform .4s ease;
 	-o-transition: transform .4s ease;
 	transition: transform .4s ease;
 }
 
-#oc-popular-songs .owl-stage-outer {
+#oc-popular-podcasts .owl-stage-outer {
 	padding-top: 8px;
 	margin-top: -8px;
 }
 
-#oc-popular-songs .oc-item:hover {
+#oc-popular-podcasts .oc-item:hover {
 	-webkit-transform: translateY(-8px);
 	-ms-transform: translateY(-8px);
 	-o-transform: translateY(-8px);
@@ -123,7 +123,7 @@
 .owl-carousel:hover .owl-nav .owl-prev { right: 38px; }
 
 
-.songs-list {
+.podcasts-list {
 	position: relative;
 	width: 100%;
 	display: -webkit-flex;
@@ -137,15 +137,15 @@
 	padding: 15px 0;
 }
 
-.songs-list [class*=songs-] { align-self: center; }
+.podcasts-list [class*=podcasts-] { align-self: center; }
 
-.songs-list .songs-number { width: 6%; }
+.podcasts-list .podcasts-number { width: 6%; }
 
-.songs-list .songs-image { max-width: 21%; }
+.podcasts-list .podcasts-image { max-width: 21%; }
 
-.songs-list .songs-image img { padding: 0 10px; }
+.podcasts-list .podcasts-image img { padding: 0 10px; }
 
-.songs-list .songs-name {
+.podcasts-list .podcasts-name {
 	width: 55%;
 	padding-right: 15px;
 	overflow: hidden;
@@ -153,14 +153,14 @@
 	white-space: nowrap;
 }
 
-.songs-list .songs-name a {
+.podcasts-list .podcasts-name a {
 	color: rgba(255, 255, 255, 0.8);
 	font-weight: 400;
 	font-size: 13px;
 	text-transform: capitalize;
 }
 
-.songs-list .songs-name a span {
+.podcasts-list .podcasts-name a span {
 	display: block;
 	font-weight: 300;
 	font-size: 11px;
@@ -168,17 +168,17 @@
 	color: rgba(255, 255, 255, 0.3);
 }
 
-.songs-list .songs-time {
+.podcasts-list .podcasts-time {
 	display: none;
 }
 
-.songs-list .songs-button {
+.podcasts-list .podcasts-button {
 	width: 13%;
 	text-align: center;
 }
 
-.songs-list .songs-image a i,
-.songs-list .songs-button a i {
+.podcasts-list .podcasts-image a i,
+.podcasts-list .podcasts-button a i {
 	width: 30px;
 	height: 30px;
 	line-height: 28px;
@@ -191,17 +191,17 @@
 	transition: color .4s, border-color .3s;
 }
 
-.songs-list .songs-button a:hover i {
+.podcasts-list .podcasts-button a:hover i {
 	color: rgba(255,255,255,0.8);
 	border: 1px solid rgba(255,255,255,0.8);
 }
 
-.songs-list .songs-image a {
+.podcasts-list .podcasts-image a {
 	position: relative;
 	display: block;
 }
 
-.songs-list .songs-image a span i {
+.podcasts-list .podcasts-image a span i {
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -215,18 +215,18 @@
 	text-align: center;
 }
 
-.songs-list .songs-image a i {
+.podcasts-list .podcasts-image a i {
 	color: #111;
 	border: none;
 	padding-top: 1px;
 	background-color: #FFF;
 }
 
-.songs-list .songs-image a i.icon-play { padding-left: 4px; }
+.podcasts-list .podcasts-image a i.icon-play { padding-left: 4px; }
 
-.songs-list:hover .songs-image a span i { opacity: 1; }
+.podcasts-list:hover .podcasts-image a span i { opacity: 1; }
 
-.songs-list .songs-image a span i.icon-pause { opacity: 1; }
+.podcasts-list .podcasts-image a span i.icon-pause { opacity: 1; }
 
 .dropdown-menu {
 	left: auto;
@@ -398,13 +398,13 @@
 
 @media (min-width: 767px) {
 
-	.songs-list .songs-number { width: 4%; }
+	.podcasts-list .podcasts-number { width: 4%; }
 
-	.songs-list .songs-image { max-width: 17%; }
+	.podcasts-list .podcasts-image { max-width: 17%; }
 
-	.songs-list .songs-image img { padding: 0 20px; }
+	.podcasts-list .podcasts-image img { padding: 0 20px; }
 
-	.songs-list .songs-time {
+	.podcasts-list .podcasts-time {
 		display: block;
 		width: 10%;
 		padding-right: 15px;

@@ -39,14 +39,14 @@
 			return $this->artworkPath;
 		}
 
-		public function getNumberOfSongs() {
-			$query = mysqli_query($this->con, "SELECT id FROM songs WHERE album='$this->id'");
+		public function getNumberOfPodcast() {
+			$query = mysqli_query($this->con, "SELECT id FROM podcasts WHERE album='$this->id'");
 			return mysqli_num_rows($query);
 		}
 
 		public function getSongIds() {
 
-			$query = mysqli_query($this->con, "SELECT id FROM songs WHERE album='$this->id' ORDER BY albumOrder ASC");
+			$query = mysqli_query($this->con, "SELECT id FROM podcasts WHERE album='$this->id' ORDER BY albumOrder ASC");
 
 			$array = array();
 
