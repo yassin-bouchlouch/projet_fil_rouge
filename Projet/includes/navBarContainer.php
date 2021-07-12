@@ -15,7 +15,7 @@
 		</div>
 
 		<div class="navItem">
-				<img class='icon' src='assets/images/icons/home.svg'>
+				<img class='icon' src='assets/images/icons/user.svg'>
 				<span role="link" tabindex="0" onclick="openPage('settings.php')" class="navItemLink"><?php echo $userLoggedIn->getFirstName(); ?></span>
 			</div>
 

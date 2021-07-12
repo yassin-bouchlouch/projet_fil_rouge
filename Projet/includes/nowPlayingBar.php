@@ -1,9 +1,9 @@
 <?php
-$songQuery = mysqli_query($con, "SELECT id FROM podcasts ORDER BY RAND() LIMIT 10");
+$podcastQuery = mysqli_query($con, "SELECT id FROM podcasts ORDER BY RAND() LIMIT 10");
 
 $resultArray = array();
 
-while($row = mysqli_fetch_array($songQuery)) {
+while($row = mysqli_fetch_array($podcastQuery)) {
 	array_push($resultArray, $row['id']);
 }
 

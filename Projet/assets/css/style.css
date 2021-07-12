@@ -17,7 +17,7 @@ html, body {
 }
 
 body {
-    background-color: #181818;
+    background-color: #18191b;
     font-size: 14px;
     min-width: 720px;
 }
@@ -114,14 +114,14 @@ body {
 
 .progressBarBg {
 	background-color: #404040;
-    height: 4px;
+    height: 2px;
     width: 100%;
     border-radius: 2px;
 }
 
 .progress {
 	background-color: #f24B4B;
-    height: 4px;
+    height: 2px;
     width: 0;
     border-radius: 2px;
 }
@@ -170,8 +170,12 @@ body {
 }
 
 #navBarContainer {
-    background: linear-gradient( to right bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) );
-    backdrop-filter: blur(2rem);
+    
+        background-color: #13141c;
+        box-shadow: 0 1px 30px 0 rgb(2 2 3 / 70%);
+    
+    /* background: linear-gradient( to right bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) ); */
+    /* backdrop-filter: blur(2rem); */
     
     width: 220px;
     height: 100vh;
@@ -239,6 +243,7 @@ body {
 
 #mainContent {
     padding: 0 20px;
+    background-color: #18191b;
 }
 
 .pageHeadingBig {
@@ -420,7 +425,7 @@ body {
 }
 
 .searchContainer {
-    background-color: #242424;
+    background-color: #18191b;
     padding: 20px 28px;
 }
 
@@ -566,7 +571,7 @@ img.icon {
     border: 2px solid #f24B4B;
  
 }
-.searchBar{
+/* .searchBar{
     margin-top: 10vh;
     width: 100%;
     border: 1px solid #f24B4B;
@@ -575,4 +580,42 @@ img.icon {
     padding: 10px 0;
     position: relative;
     align-items: center;
-}
+} */
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+    margin-top: 10vh;
+  }
+  
+  .searchTerm {
+    width: 70%;
+    border: 2px solid #f24B4B;
+    border-right: none;
+    padding: 5px;
+    height: 3rem;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .searchTerm:focus{
+    color: #f24B4B;
+  }
+  
+  .searchButton {
+    width: 4rem;
+    height: 3rem;
+    border: 2px solid #f24B4B;
+    background: #f24B4B;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .search-icon{
+      width: 30px!important;
+  }
