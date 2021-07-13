@@ -39,6 +39,16 @@ $(document).on("change", "select.playlist", function() {
 	});
 });
 
+function updateProfilePic(emailClass) {
+	var emailValue = $("." + emailClass).val();
+
+	$.post("includes/handlers/ajax/updateProfilePic.php", { profilePic: emailValue, username: userLoggedIn})
+	.done(function(response) {
+		$("." + emailClass).nextAll(".message").text(response);
+	})
+
+
+}
 
 function updateEmail(emailClass) {
 	var emailValue = $("." + emailClass).val();
@@ -50,6 +60,7 @@ function updateEmail(emailClass) {
 
 
 }
+
 
 function updatePassword(oldPasswordClass, newPasswordClass1, newPasswordClass2) {
 	var oldPassword = $("." + oldPasswordClass).val();
@@ -68,6 +79,7 @@ function updatePassword(oldPasswordClass, newPasswordClass1, newPasswordClass2) 
 
 
 }
+
 
 function logout() {
 	$.post("includes/handlers/ajax/logout.php", function() {
