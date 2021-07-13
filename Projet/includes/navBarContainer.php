@@ -10,8 +10,8 @@
 
 		<div class="group">
 
-		<div class="navItem">
-			<img class='profilePic' src="<?php echo $userLoggedIn->getprofilePic(); ?>">
+		<div class="avatar-container">
+			<img class='avatar' src="<?php echo $userLoggedIn->getprofilePic(); ?>">
 		</div>
 
 		<div class="navItem">

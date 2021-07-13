@@ -3,7 +3,7 @@ include("includes/includedFiles.php");
 ?>
 
 <div class=" Search searchBar">
-				<input type="text" class="searchTerm" placeholder="What are you looking for?">
+				<input type="text" class="searchInput searchTerm" placeholder="What are you looking for?">
 				<button type="submit" class="searchButton" onclick='openPage("search.php")'>
 				<img src="assets/images/icons/search.svg" class="icon search-icon" alt="Search"></button>
 					

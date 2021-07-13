@@ -254,9 +254,9 @@ body {
 .gridViewItem {
     display: inline-block;
     margin-right: 20px;
-    width: 29%;
+    width: 15%;
     max-width: 200px;
-    min-width: 150px;
+    min-width: 100px;
     margin-bottom: 20px;
 }
 
@@ -553,8 +553,17 @@ img.icon {
     margin-right: 1rem;
     padding: 5px;
 }
-
-.profilePic{
+.avatar-container{
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    letter-spacing: 1px;
+    position: relative;
+    align-items: center;
+    width: 100%;
+}
+.avatar{
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 50%;
