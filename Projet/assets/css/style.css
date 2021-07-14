@@ -17,7 +17,7 @@ html, body {
 }
 
 body {
-    background-color: #18191b;
+    background-color: #13141c;
     font-size: 14px;
     min-width: 720px;
 }
@@ -243,7 +243,7 @@ body {
 
 #mainContent {
     padding: 0 20px;
-    background-color: #18191b;
+    /* background-color: #18191b; */
 }
 
 .pageHeadingBig {
