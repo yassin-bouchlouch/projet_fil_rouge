@@ -11,6 +11,9 @@ body {
     outline: none;
 }
 
+::-moz-selection { background: #f24B4B; }
+::selection { background: #f24B4B; }
+
 #background {
 	background-color: #000;
     background-image: url(../images/bg.jpg);
@@ -124,6 +127,7 @@ body {
 #loginText {
     padding: 45px;
     display: table-cell;
+    text-align: center;
 }
 
 #loginText h1 {
@@ -134,6 +138,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 3px;
     line-height: 4rem;
+    margin:  0 auto;
 }
 
 #loginText h2 {
