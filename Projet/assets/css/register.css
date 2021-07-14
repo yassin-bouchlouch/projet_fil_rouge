@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gudea:wght@700&display=swap');
 html, 
 body {
 	padding: 0;
@@ -129,6 +130,10 @@ body {
     color: #f24B4B;
     font-size: 60px;
     font-weight: bold;
+    font-family: 'Gudea', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 4rem;
 }
 
 #loginText h2 {

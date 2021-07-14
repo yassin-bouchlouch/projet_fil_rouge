@@ -133,13 +133,13 @@
 			</div>
 
 			<div id="loginText">
-				<h1>Your Voice, Your World</h1>
-				<h2>Listen to loads of podcasts for free</h2>
+				<h1>Your Voice,<br> Your World</h1>
+				<!-- <h2>Listen to loads of podcasts for free</h2>
 				<ul>
 					<li>Discover Podcasts you'll fall in love with</li>
 					<li>Create your own Podcasts</li>
 					<li>Follow Podcasters to keep up to date</li>
-				</ul>
+				</ul> -->
 			</div>
 
 		</div>
