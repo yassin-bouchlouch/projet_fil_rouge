@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gudea:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap');
 html, 
 body {
 	padding: 0;
@@ -130,7 +130,7 @@ body {
     color: #f24B4B;
     font-size: 60px;
     font-weight: bold;
-    font-family: 'Gudea', sans-serif;
+    font-family: 'Kanit', sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
     line-height: 4rem;
@@ -159,3 +159,12 @@ body {
 img.logout{
     width:30px
 }
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: #000000 !important;/*The color of the word that the browser remembers the password*/
+    transition: background-color 5000s ease-in-out 0s;/*Remove the background color by delay rendering the background color in disguise*/
+    caret-color: #acfff2;/*Cursor color*/
+    background: #ffffff00;
+}
+
+input:focus { outline: none; }/*External border line removal*/

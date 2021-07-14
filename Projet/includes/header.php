@@ -21,7 +21,7 @@ else {
 
 <html>
 <head>
-	<title>Welcome to MyCast!</title>
+	<title>Welcome to Podcaster!</title>
 
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
