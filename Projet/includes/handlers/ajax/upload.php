@@ -1,6 +1,11 @@
 <?php 
- 
-	include("../../config.php");
+ include("../../config.php");
+
+
+ function message($body,$type){
+	$_SESSION['message']['body'] = $body;
+	$_SESSION['message']['type'] = $type;
+}
 	
 
 	if(isset($_POST['song_name'])){
@@ -12,7 +17,7 @@
 		if(isset($_FILES['song_photo']['error'])){
 			if($_FILES['song_photo']['error'] == 0){
 		 
-				$target_dir = "uploads/";
+				$target_dir = "../../../assets/uploads/";
 				
 				$song_photo = time()."_".rand(100000,10000000).rand(100000,10000000)."_".$_FILES["song_photo"]["name"];
 
@@ -35,7 +40,7 @@
 		if(isset($_FILES['song_mp3']['error'])){
 			if($_FILES['song_mp3']['error'] == 0){
 		 
-				$target_dir = "uploads/";
+				$target_dir = "../../../assets/uploads/";
 				
 				$song_mp3 = time()."_".rand(100000,10000000).rand(100000,10000000)."_".$_FILES["song_mp3"]["name"];
 
@@ -57,22 +62,22 @@
 		$song_date = time();
 
 		$song_name = $_POST['song_name'];
-		$aritst_id = $_POST['aritst_id'];
+		
  
 		$SQL = "INSERT INTO songs(
-						song_mp3,song_photo,aritst_id,song_name
+						song_mp3,song_photo,song_name
 					)VALUES(
-						'{$song_mp3}','{$song_photo}','{$aritst_id}','{$song_name}'
+						'{$song_mp3}','{$song_photo}','{$song_name}'
 					)
 				";
 
-		if($conn->query($SQL)){ 
+		if($con->query($SQL)){ 
 			message("New song was uploaded successfully.","success");
 		}else{ 
 			message("Something went wrong while uploading New song.","warning");
 		}
 
-		header("Location: admin_songs.php");
+		header("Location:../../../yourpodcasts.php");
 		die();
 	}
 
