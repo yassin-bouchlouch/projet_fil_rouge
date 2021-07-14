@@ -17,7 +17,7 @@
 
 <html>
 <head>
-	<title>Welcome to MyCast!</title>
+	<title>Welcome to Podcaster!</title>
 
 	<link rel="stylesheet" type="text/css" href="assets/css/register.css">
 
@@ -133,7 +133,7 @@
 			</div>
 
 			<div id="loginText">
-				<h1>Listen to great Podcasts</h1>
+				<h1>Your Voice, Your World</h1>
 				<h2>Listen to loads of podcasts for free</h2>
 				<ul>
 					<li>Discover Podcasts you'll fall in love with</li>
