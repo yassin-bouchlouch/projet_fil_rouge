@@ -152,12 +152,12 @@ INSERT INTO `playlists` (`id`, `name`, `owner`, `dateCreated`) VALUES
 
 CREATE TABLE `podcasts` (
   `id` int NOT NULL,
-  `title` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `title` varchar(250) ,
   `artist` int NOT NULL,
   `album` int NOT NULL,
   `genre` int NOT NULL,
-  `duration` varchar(8) CHARACTER SET latin1 NOT NULL,
-  `path` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `duration` varchar(8) ,
+  `path` varchar(500) ,
   `albumOrder` int NOT NULL,
   `plays` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
