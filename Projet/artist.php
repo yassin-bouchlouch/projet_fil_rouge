@@ -45,7 +45,7 @@ $artist = new Artist($con, $artistId);
 				break;
 			}
 
-			$albumSong = new Song($con, $songId);
+			$albumSong = new Podcast($con, $songId);
 			$albumArtist = $albumSong->getArtist();
 
 			echo "<li class='tracklistRow'>

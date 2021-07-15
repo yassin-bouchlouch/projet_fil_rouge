@@ -1,5 +1,5 @@
 <?php
-	class Playlist {
+	class UploadedPodcasts {
 
 		private $con;
 		private $id;

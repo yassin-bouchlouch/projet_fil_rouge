@@ -34,7 +34,8 @@
 
 			if(empty($this->errorArray) == true) {
 				//Insert into db
-				return $this->insertUserDetails($un, $fn, $ln, $em, $pw);
+				return $this->insertUserDetails($un, $fn, $ln, $em, $pw) && $this->insertArtistDetails($un, $em,);
+				
 			}
 			else {
 				return false;
@@ -59,6 +60,13 @@
 			return $result;
 		}
 
+		public function insertArtistDetails($un,$em) {
+
+			$result = mysqli_query($this->con, "INSERT INTO artists VALUES ('', '$un',  '$em')");
+
+			return $result;
+		}
+		
 		private function validateUsername($un) {
 
 			if(strlen($un) > 25 || strlen($un) < 5) {

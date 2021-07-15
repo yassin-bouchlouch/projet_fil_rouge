@@ -24,17 +24,17 @@ include("includes/includedFiles.php");
 
 			while($row = mysqli_fetch_array($yourPodcastsQuery)) {
 
-				$playlist = new Playlist($con, $row);
+				$UploadedPodcasts = new UploadedPodcasts($con, $row);
 
 				echo "<div class='gridViewItem' role='link' tabindex='0' 
-							onclick='openPage(\"playlist.php?id=" . $playlist->getId() . "\")'>
+							onclick='openPage(\"podcasts.php?id=" . $UploadedPodcasts->getId() . "\")'>
 
 						<div class='playlistImage'>
 							<img src='assets/images/icons/disc.svg'>
 						</div>
 						
 						<div class='gridViewInfo'>"
-							. $playlist->getName() .
+							. $UploadedPodcasts->getName() .
 						"</div>
 
 					</div>";
@@ -52,7 +52,6 @@ include("includes/includedFiles.php");
 	</div>
 
 </div>
-		<a class="btn btn-dark btn-sm mt-1" href="includes/handlers/ajax/upload.php">UPLOAD NEW Podcasts</a>
 
 
 

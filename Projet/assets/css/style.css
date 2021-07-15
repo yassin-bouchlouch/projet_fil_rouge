@@ -188,7 +188,7 @@ body {
 }
 
 .navBar {
-    padding: 25px;
+    
     display: flex;
     flex-direction: column;
     -ms-flex-direction: column;
@@ -227,7 +227,7 @@ body {
     color: #ffffff;
 }
 .navItem:hover {
-    background-color: #333;
+    background-color: #0c0d14;
     color: #fff;
 }
 
@@ -555,6 +555,7 @@ img.icon {
     cursor: pointer;
     margin-right: 1rem;
     padding: 5px;
+    margin-left: 1rem;
 }
 .avatar-container{
     padding: 10px 0;

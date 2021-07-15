@@ -39,7 +39,7 @@ $owner = new User($con, $playlist->getOwner());
 		$i = 1;
 		foreach($songIdArray as $songId) {
 
-			$playlistSong = new Song($con, $songId);
+			$playlistSong = new Podcast($con, $songId);
 			$songArtist = $playlistSong->getArtist();
 
 			echo "<li class='tracklistRow'>

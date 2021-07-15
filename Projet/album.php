@@ -37,7 +37,7 @@ $artistId = $artist->getId();
 		$i = 1;
 		foreach($songIdArray as $songId) {
 
-			$albumSong = new Song($con, $songId);
+			$albumSong = new Podcast($con, $songId);
 			$albumArtist = $albumSong->getArtist();
 
 			echo "<li class='tracklistRow'>

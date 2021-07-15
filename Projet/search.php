@@ -63,7 +63,7 @@ $(function() {
 
 			array_push($songIdArray, $row['id']);
 
-			$albumSong = new Song($con, $row['id']);
+			$albumSong = new Podcast($con, $row['id']);
 			$albumArtist = $albumSong->getArtist();
 
 			echo "<li class='tracklistRow'>
