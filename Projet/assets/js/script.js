@@ -162,6 +162,29 @@ function deletePlaylist(playlistId) {
 	}
 }
 
+function createNewAlbum() {
+
+	var popup = prompt("Please enter the name of your New Album");
+
+	if(popup != null) {
+
+		$.post("includes/handlers/ajax/createNewAlbum.php", { name: popup, username: userLoggedIn })
+		.done(function(error) {
+
+			if(error != "") {
+				alert(error);
+				return;
+			}
+
+			//do something when ajax returns
+			openPage("yourpodcasts.php");
+		});
+
+	}
+
+}
+
+
 function hideOptionsMenu() {
 	var menu = $(".optionsMenu");
 	if(menu.css("display") != "none") {
