@@ -16,13 +16,13 @@ include("includes/includedFiles.php");
 		<?php
 			$username = $userLoggedIn->getUsername();
 
-			$playlistsQuery = mysqli_query($con, "SELECT * FROM yourPodcasts WHERE owner='$username'");
+			$yourPodcastsQuery = mysqli_query($con, "SELECT * FROM yourPodcasts WHERE owner='$username'");
 
-			if(mysqli_num_rows($playlistsQuery) == 0) {
+			if(mysqli_num_rows($yourPodcastsQuery) == 0) {
 				echo "<span class='noResults'>it seems like You don't have any Podcasts yet.</span>";
 			}
 
-			while($row = mysqli_fetch_array($playlistsQuery)) {
+			while($row = mysqli_fetch_array($yourPodcastsQuery)) {
 
 				$playlist = new Playlist($con, $row);
 
@@ -30,7 +30,7 @@ include("includes/includedFiles.php");
 							onclick='openPage(\"playlist.php?id=" . $playlist->getId() . "\")'>
 
 						<div class='playlistImage'>
-							<img src='assets/images/icons/inbox.svg'>
+							<img src='assets/images/icons/disc.svg'>
 						</div>
 						
 						<div class='gridViewInfo'>"
