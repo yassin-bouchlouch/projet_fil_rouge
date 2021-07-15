@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2021 at 05:29 PM
--- Server version: 8.0.24
--- PHP Version: 8.0.2
+-- Generation Time: Jul 15, 2021 at 05:27 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,12 +28,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `albums` (
-  `id` int NOT NULL,
-  `title` varchar(250) NOT NULL,
-  `artist` int NOT NULL,
-  `genre` int NOT NULL,
-  `artworkPath` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL,
+  `title` varchar(250) CHARACTER SET latin1 NOT NULL,
+  `artist` int(11) NOT NULL,
+  `genre` int(11) NOT NULL,
+  `artworkPath` varchar(500) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `albums`
@@ -56,7 +56,7 @@ INSERT INTO `albums` (`id`, `title`, `artist`, `genre`, `artworkPath`) VALUES
 --
 
 CREATE TABLE `artists` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `Email` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -80,7 +80,7 @@ INSERT INTO `artists` (`id`, `name`, `Email`) VALUES
 --
 
 CREATE TABLE `genres` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -111,10 +111,10 @@ INSERT INTO `genres` (`id`, `name`) VALUES
 --
 
 CREATE TABLE `playlistpodcasts` (
-  `id` int NOT NULL,
-  `songId` int NOT NULL,
-  `playlistId` int NOT NULL,
-  `playlistOrder` int NOT NULL
+  `id` int(11) NOT NULL,
+  `songId` int(11) NOT NULL,
+  `playlistId` int(11) NOT NULL,
+  `playlistOrder` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -131,7 +131,7 @@ INSERT INTO `playlistpodcasts` (`id`, `songId`, `playlistId`, `playlistOrder`) V
 --
 
 CREATE TABLE `playlists` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `owner` varchar(50) NOT NULL,
   `dateCreated` datetime NOT NULL
@@ -151,16 +151,16 @@ INSERT INTO `playlists` (`id`, `name`, `owner`, `dateCreated`) VALUES
 --
 
 CREATE TABLE `podcasts` (
-  `id` int NOT NULL,
-  `title` varchar(250) ,
-  `artist` int NOT NULL,
-  `album` int NOT NULL,
-  `genre` int NOT NULL,
-  `duration` varchar(8) ,
-  `path` varchar(500) ,
-  `albumOrder` int NOT NULL,
-  `plays` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `id` int(11) NOT NULL,
+  `title` varchar(250) DEFAULT NULL,
+  `artist` int(11) NOT NULL,
+  `album` int(11) NOT NULL,
+  `genre` int(11) NOT NULL,
+  `duration` varchar(8) DEFAULT NULL,
+  `path` varchar(500) DEFAULT NULL,
+  `albumOrder` int(11) NOT NULL,
+  `plays` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `podcasts`
@@ -183,10 +183,10 @@ INSERT INTO `podcasts` (`id`, `title`, `artist`, `album`, `genre`, `duration`, `
 (14, 'Happy Rock', 3, 6, 9, '1:45', 'assets/music/bensound-happyrock.mp3', 4, 9),
 (15, 'Jazzy Frenchy', 3, 6, 10, '1:44', 'assets/music/bensound-jazzyfrenchy.mp3', 3, 9),
 (16, 'Little Idea', 3, 6, 1, '2:49', 'assets/music/bensound-littleidea.mp3', 2, 11),
-(17, 'Memories', 3, 6, 2, '3:50', 'assets/music/bensound-memories.mp3', 1, 9),
+(17, 'Memories', 3, 6, 2, '3:50', 'assets/music/bensound-memories.mp3', 1, 10),
 (18, 'Moose', 4, 7, 1, '2:43', 'assets/music/bensound-moose.mp3', 5, 3),
 (19, 'November', 4, 7, 2, '3:32', 'assets/music/bensound-november.mp3', 4, 8),
-(20, 'Of Elias Dream', 4, 7, 3, '4:58', 'assets/music/bensound-ofeliasdream.mp3', 3, 5),
+(20, 'Of Elias Dream', 4, 7, 3, '4:58', 'assets/music/bensound-ofeliasdream.mp3', 3, 6),
 (21, 'Pop Dance', 4, 7, 2, '2:42', 'assets/music/bensound-popdance.mp3', 2, 10),
 (22, 'Retro Soul', 4, 7, 5, '3:36', 'assets/music/bensound-retrosoul.mp3', 1, 10),
 (23, 'Sad Day', 5, 2, 1, '2:28', 'assets/music/bensound-sadday.mp3', 1, 10),
@@ -207,13 +207,20 @@ INSERT INTO `podcasts` (`id`, `title`, `artist`, `album`, `genre`, `duration`, `
 --
 
 CREATE TABLE `songs` (
-  `song_id` int NOT NULL,
-  `song_mp3` text,
-  `song_photo` text,
-  `song_date` text,
+  `song_id` int(11) NOT NULL,
+  `song_mp3` text DEFAULT NULL,
+  `song_photo` text DEFAULT NULL,
+  `song_date` text DEFAULT NULL,
   `aritst_id` varchar(35) DEFAULT NULL,
   `song_name` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `songs`
+--
+
+INSERT INTO `songs` (`song_id`, `song_mp3`, `song_photo`, `song_date`, `aritst_id`, `song_name`) VALUES
+(1, '1626272277_5781069658789_bensound-moose.mp3', '1626272277_41979217218584_solicode-prototype.jpg', NULL, NULL, 'hope');
 
 -- --------------------------------------------------------
 
@@ -222,7 +229,7 @@ CREATE TABLE `songs` (
 --
 
 CREATE TABLE `users` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `username` varchar(25) NOT NULL,
   `firstName` varchar(50) NOT NULL,
   `lastName` varchar(50) NOT NULL,
@@ -230,7 +237,7 @@ CREATE TABLE `users` (
   `password` varchar(32) NOT NULL,
   `signUpDate` datetime NOT NULL,
   `profilePic` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -239,7 +246,28 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `firstName`, `lastName`, `email`, `password`, `signUpDate`, `profilePic`) VALUES
 (1, 'reece-kenney', 'Reece', 'Kenney', 'Reece@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2017-06-28 00:00:00', 'assets/images/profile-pics/head_emerald.png'),
 (2, 'donkey-kong', 'Donkey', 'Kong', 'Dk@yahoo.com', '7c6a180b36896a0a8c02787eeafb0e4c', '2017-06-28 00:00:00', 'assets/images/profile-pics/head_emerald.png'),
-(3, 'yassin', 'Yassin', 'Bouchlouch', 'Bouchlouch.yassin.dev@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2021-07-10 00:00:00', 'assets/images/profile-pics/yassin.jpg');
+(3, 'yassin', 'Yassin', 'Bouchlouch', 'Bouchlouch.yassin.dev@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2021-07-10 00:00:00', 'assets/images/profile-pics/yassin.jpg'),
+(4, 'asmae', 'Asmae', 'Hamidouch', 'Asmae@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '2021-07-14 00:00:00', 'assets/images/profile-pics/head_emerald.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `yourpodcasts`
+--
+
+CREATE TABLE `yourpodcasts` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `owner` varchar(50) NOT NULL,
+  `dateCreated` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `yourpodcasts`
+--
+
+INSERT INTO `yourpodcasts` (`id`, `name`, `owner`, `dateCreated`) VALUES
+(1, 'myfirst album', 'yassin', '2021-07-15 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -282,9 +310,21 @@ ALTER TABLE `podcasts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `songs`
+--
+ALTER TABLE `songs`
+  ADD PRIMARY KEY (`song_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `yourpodcasts`
+--
+ALTER TABLE `yourpodcasts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -295,43 +335,55 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `artists`
 --
 ALTER TABLE `artists`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `genres`
 --
 ALTER TABLE `genres`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `playlistpodcasts`
 --
 ALTER TABLE `playlistpodcasts`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `playlists`
 --
 ALTER TABLE `playlists`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `podcasts`
 --
 ALTER TABLE `podcasts`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
+-- AUTO_INCREMENT for table `songs`
+--
+ALTER TABLE `songs`
+  MODIFY `song_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `yourpodcasts`
+--
+ALTER TABLE `yourpodcasts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
