@@ -24,7 +24,7 @@ $owner = new User($con, $UploadedPodcasts->getOwner());
 		<h2><?php echo $UploadedPodcasts->getName(); ?></h2>
 		<p>By <?php echo $UploadedPodcasts->getOwner(); ?></p>
 		<p><?php echo $UploadedPodcasts->getNumberOfPodcast(); ?> Podcasts</p>
-		<button class="button" onclick="deleteUploadedPodcasts('<?php echo $UploadedPodcastsId; ?>')">DELETE ALBUM</button>
+		<button class="button" onclick="deleteAlbum('<?php echo $UploadedPodcastsId; ?>')">DELETE ALBUM</button>
 
 	</div>
 

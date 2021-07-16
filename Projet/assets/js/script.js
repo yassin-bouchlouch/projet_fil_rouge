@@ -162,6 +162,11 @@ function deletePlaylist(playlistId) {
 	}
 }
 
+function togglePopup() {
+	document.getElementById("popup-1")
+	 .classList.toggle("active");
+ }
+ 
 function createNewAlbum() {
 
 	var popup = prompt("Please enter the name of your New Album");
@@ -184,6 +189,26 @@ function createNewAlbum() {
 
 }
 
+function deleteAlbum(albumId) {
+	var prompt = confirm("Are you sure you want to delte this Album?");
+
+	if(prompt == true) {
+
+		$.post("includes/handlers/ajax/deleteAlbum.php", { albumId: albumId })
+		.done(function(error) {
+
+			if(error != "") {
+				alert(error);
+				return;
+			}
+
+			//do something when ajax returns
+			openPage("yourpodcasts.php");
+		});
+
+
+	}
+}
 
 function hideOptionsMenu() {
 	var menu = $(".optionsMenu");

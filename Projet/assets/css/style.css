@@ -398,10 +398,10 @@ body {
     color: #fff;
     cursor: pointer;
     margin-bottom: 10px;
-    background-color: transparent;
+    background-color: #f24B4B;
     font-weight: 300;
     letter-spacing: 2px;
-    border: 2px solid #f24B4B;
+    border: 1px solid #f24B4B;
     border-radius: 10px;
     padding: 15px;
     min-width: 130px;
@@ -632,3 +632,4 @@ img.icon {
   .search-icon{
       width: 30px!important;
   }
+  
