@@ -1,107 +1,24 @@
 <?php
 include("includes/includedFiles.php");
+
+
+function getAllGenres($con){
+	$sql = "SELECT * FROM genres ORDER BY name ASC";
+ 	$res = $con->query($sql);
+ 	$genres = array();  
+  	while ($data = $res->fetch_assoc()) {
+  		array_push($genres, $data);
+ 	}
+ 	return $genres;
+}
+$genres = getAllGenres($con);
 ?>
 <style>
- @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
 
- /* body {
-  background: #262626;
-  font-family: raleway;
-  color: white;
-  margin: 0;
-} */
-
-.popup .content {
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%,-150%) scale(0);
- width: 300px;
- height: 450px;
- z-index: 2;
- text-align: center;
- padding: 20px;
- border-radius: 10px;
- background: linear-gradient( to right bottom, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.05) );
-    backdrop-filter: blur(2rem);
-    border: 1px solid rgba(255,255,255,0.3);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.253), 0 6px 6px rgba(0, 0, 0, 0.297);
- z-index: 1;
-}
-
-.popup .close-btn {
- cursor: pointer;
- position: absolute;
- right: 20px;
- top: 20px;
- width: 30px;
- height: 30px;
- color: #fff;
- font-size: 30px;
- 
- }
-
-.popup.active .content {
-transition: all 300ms ease-in-out;
-transform: translate(-50%,-50%) scale(1);
-}
-
-h1 {
- text-align: center;
- font-size: 32px;
- font-weight: 600;
- padding-top: 20px;
- padding-bottom: 10px;
-}
-
-a {
- font-weight: 600;
- color: white;
-}
-
-.input-field .validate {
-width: 100%;
-padding: 15px;
-font-size: 16px;
-border-radius: 10px;
-border: 1px solid #f24B4B;
-margin-bottom: 15px;
-color: #fff;
-background: #0c0d14;
-/* box-shadow: inset 5px 5px 5px #f24B4B, 
-            inset -5px -5px 5px #f24B4B; */
-outline: none;
-}
-
-
-.second-button {
-width: 100%;
-color: white;
-font-size: 18px;
-font-weight: 500;
-margin-top: 20px;
-padding: 15px 30px;
-border-radius: 10px;
-border: none;
-background: #f24B4B;
-box-shadow:  8px 8px 15px #202020, 
-             -8px -8px 15px #2c2c2c;
-transition: box-shadow .35s ease !important;
-outline: none;
-}
-
-.second-button:active{
-background: linear-gradient(145deg,#222222, #292929);
-box-shadow: 5px 5px 10px #262626, -5px -5px 10px #262626;
-border: none;
-outline: none;
-}
-p{
-color: #fff;
-padding: 15px;
-}
 
 </style>
+<link rel="stylesheet" href="assets/css/yourpodcasts.css">
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 <div class="playlistsContainer">
 
 	<div class="gridViewContainer">
@@ -111,10 +28,32 @@ padding: 15px;
     <div class="close-btn" onclick="togglePopup()">
      ×</div>
      
-		<h1>Add New Album</h1> 
-			<div class="input-field"><input placeholder="Album's Name" class="validate"></div>
-			<div class="input-field"><input placeholder="Genre" class="validate"></div>
-    <button class="second-button">Add</button>
+		<h1>Add New Album</h1>
+		<form method="post" action="includes/handlers/ajax/uploadNewAlbum.php" enctype="multipart/form-data"> 
+		<div class='form-item'>
+    <label for="title">Title</label>
+      <input class=" input-field" name="title" id="title" class="form-control validate"></input>
+    </div>
+  
+      <div class="form-item box">
+      <label for="id">Genre</label>
+			    <select  name="id" required="">
+			    	<option value=""></option>
+			    	<?php foreach ($genres as $key => $a): ?>
+			    		<option value="<?php echo($a['id']); ?>"><?php echo($a['name']); ?></option>
+			    	<?php endforeach ?>
+			    </select>
+			  </div>
+
+        <div class="form-item">
+        <label for="artwork">Poster</label>
+          <input type="file" id="artwork" name="artwork" multiple />
+        </div>
+        
+        <div class="form-item box">
+            <button type="submit" class="second-button">Add</button>
+        </div>
+		</form>
     
       
 	
@@ -126,9 +65,9 @@ padding: 15px;
 		</div>
   </div>
 	
+	<!-- <a class="btn btn-dark btn-sm mt-1" href="includes/handlers/ajax/uploadNewAlbum.php">UPLOAD NEW MUSIC</a> -->
 
-
-
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
 		<?php
 			$username = $userLoggedIn->getUsername();
 

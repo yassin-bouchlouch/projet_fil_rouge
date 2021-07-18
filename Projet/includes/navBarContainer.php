@@ -26,7 +26,7 @@
 
 			<div class="navItem">
 				<img class='icon' src='assets/images/icons/mic.svg'>
-				<span role="link" tabindex="0" onclick="openPage('yourpodcasts.php')" class="navItemLink">yourpodcasts</span>
+				<span role="link" tabindex="0" onclick="openPage('yourpodcasts.php')" class="navItemLink">your Podcasts</span>
 			</div>
 
 			<div class="navItem">
