@@ -11,7 +11,15 @@ include("includes/includedFiles.php");
 
 	<div class="userDetails">
 
-	
+	<style>
+		button.file-upload-button{
+			display:none
+		}
+		.file-upload-input{
+			display: none!important;
+		}
+
+	</style>
 
 				<div class="container">
 				<div class="profile-pic">

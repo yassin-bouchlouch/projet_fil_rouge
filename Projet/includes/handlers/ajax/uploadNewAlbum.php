@@ -1,5 +1,6 @@
 <?php 
  include("../../config.php");
+ include("../../classes/User.php");
 
 
  function message($body,$type){
@@ -9,7 +10,6 @@
 
 	if(isset($_POST['title'])){
 		$file_name = "";  
-  
 		$artwork = "";
 
 		if(isset($_FILES['artwork']['error'])){
@@ -17,7 +17,7 @@
 		 
 				$target_dir = "../../../assets/images/artwork/";
 				
-				$artwork = time()."_".rand(100000,10000000).rand(100000,10000000)."_".$_FILES["artwork"]["name"];
+				$artwork =time()."_".rand(100000,10000000).rand(100000,10000000)."_".$_FILES["artwork"]["name"];
 
 				$artwork = str_replace(" ", "_", $artwork);
 				$artwork = urlencode($artwork);
@@ -35,14 +35,14 @@
 		}
 
 	
-
+		$userLoggedIn = $_SESSION['userLoggedIn'];
 		$title = $_POST['title'];
     $id = $_POST['id'];
  
 		$SQL = "INSERT INTO albums(
-						title,genre,artworkPath
+						title,artist,genre,artworkPath
 					)VALUES(
-						'{$title}','{$id}','{$artwork}'
+						'{$title}',(SELECT id from artists where name = '$userLoggedIn'),'{$id}','{$artwork}'
 					)
 				";
 
@@ -60,44 +60,7 @@
 
    
 ?>
-<div class="container">
-	
 
-	<div class="row pl-0">
-		
-		<div class="col-md-8">
-			<h2>Uploading new song</h2>
-
-			<form method="post" action="uploadNewAlbum.php" enctype="multipart/form-data">
-			  <div class="form-group">
-			    <label for="title">Song name</label>
-			    <input type="text" name="title" class="form-control" id="title"  placeholder="Enter albums name"> 
-			  </div>
- 
-        
-        <div class="form-group">
-			    <label for="id">Genre</label>
-			    <select name="id" required="" class="form-control">
-			    	<option value=""></option>
-			    	<?php foreach ($genres as $key => $a): ?>
-			    		<option value="<?php echo($a['id']); ?>"><?php echo($a['name']); ?></option>
-			    	<?php endforeach ?>
-			    </select>
-			  </div>
-
- 			  <div class="form-group">
-			    <label for="artwork">Song photo</label>
-			    <input type="file"  name="artwork" class="form-control" id="artwork"> 
-			  </div>
-
-			  <button type="submit" class="float-right mt-md-3 btn btn-lg btn-dark">Add new Album</button>
-
-			</form>
-
-		</div>
-	</div>
-
-</div>
 
 
 

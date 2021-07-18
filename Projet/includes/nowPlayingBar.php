@@ -154,7 +154,7 @@ function setTrack(trackId, newPlaylist, play) {
 
 		$.post("includes/handlers/ajax/getAlbumJson.php", { albumId: track.album }, function(data) {
 			var album = JSON.parse(data);
-			$(".content .albumLink img").attr("src", album.artworkPath);
+			$(".content .albumLink img").attr("src","assets/images/artwork/" + album.artworkPath);
 			$(".content .albumLink img").attr("onclick", "openPage('album.php?id=" + album.id + "')");
 			$(".trackInfo .trackName span").attr("onclick", "openPage('album.php?id=" + album.id + "')");
 		});
@@ -195,7 +195,7 @@ function pauseSong() {
 		<div id="nowPlayingLeft">
 			<div class="content">
 				<span class="albumLink">
-					<img role="link" tabindex="0" src="" class="albumArtwork">
+					<img role="link" tabindex="0" src="assets/images/artwork/ " class="albumArtwork">
 				</span>
 
 				<div class="trackInfo">

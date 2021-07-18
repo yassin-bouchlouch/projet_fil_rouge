@@ -15,7 +15,7 @@ $artistId = $artist->getId();
 <div class="entityInfo">
 
 	<div class="leftSection">
-		<img src="<?php echo $album->getArtworkPath(); ?>">
+		<img src="assets/images/artwork/<?php echo $album->getArtworkPath(); ?>">
 	</div>
 
 	<div class="rightSection">

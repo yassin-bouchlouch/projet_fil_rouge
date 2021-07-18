@@ -13,10 +13,7 @@ function getAllGenres($con){
 }
 $genres = getAllGenres($con);
 ?>
-<style>
 
-
-</style>
 <link rel="stylesheet" href="assets/css/yourpodcasts.css">
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 <div class="playlistsContainer">
@@ -70,8 +67,10 @@ $genres = getAllGenres($con);
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
 		<?php
 			$username = $userLoggedIn->getUsername();
+			$artistId = $_GET['id'];
+    
 
-			$yourPodcastsQuery = mysqli_query($con, "SELECT * FROM yourPodcasts WHERE owner='$username'");
+			$yourPodcastsQuery = mysqli_query($con, "SELECT * FROM albums WHERE artist='$artistId'");
 
 			if(mysqli_num_rows($yourPodcastsQuery) == 0) {
 				echo "<span class='noResults'>it seems like You don't have any Podcasts yet.</span>";
@@ -79,20 +78,19 @@ $genres = getAllGenres($con);
 
 			while($row = mysqli_fetch_array($yourPodcastsQuery)) {
 
-				$UploadedPodcasts = new UploadedPodcasts($con, $row);
+				
 
-				echo "<div class='gridViewItem' role='link' tabindex='0' 
-							onclick='openPage(\"podcasts.php?id=" . $UploadedPodcasts->getId() . "\")'>
+        echo "<div class='gridViewItem'>
+        <span role='link' tabindex='0' onclick='openPage(\"album.php?id=" . $row['id'] . "\")'>
+          <img src='assets/images/artwork/" . $row['artworkPath'] . "'>
 
-						<div class='playlistImage'>
-							<img src='assets/images/icons/disc.svg'>
-						</div>
-						
-						<div class='gridViewInfo'>"
-							. $UploadedPodcasts->getName() .
-						"</div>
+          <div class='gridViewInfo'>"
+            . $row['title'] .
+          "</div>
+        </span>
 
-					</div>";
+      </div>";
+
 
 
 
