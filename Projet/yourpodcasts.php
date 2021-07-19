@@ -66,11 +66,12 @@ $genres = getAllGenres($con);
 
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
 		<?php
-			$username = $userLoggedIn->getUsername();
-			$artistId = $_GET['id'];
+			$userLoggedIn = $_SESSION['userLoggedIn'];
+			$userLoggedInId = $_SESSION['userLoggedIn'];
+			
     
 
-			$yourPodcastsQuery = mysqli_query($con, "SELECT * FROM albums WHERE artist='$artistId'");
+			$yourPodcastsQuery = mysqli_query($con, "SELECT * FROM albums WHERE artist=(SELECT id from artists where name = '$userLoggedIn')");
 
 			if(mysqli_num_rows($yourPodcastsQuery) == 0) {
 				echo "<span class='noResults'>it seems like You don't have any Podcasts yet.</span>";
