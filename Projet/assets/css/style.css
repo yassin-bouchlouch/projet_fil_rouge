@@ -230,10 +230,6 @@ body {
     background-color: #0c0d14;
     color: #fff;
 }
-.navItem:visited {
-    background-color: #f24B4B;
-    color: #fff;
-}
 
 .navItemLink .icon {
     position: absolute;
@@ -270,7 +266,7 @@ body {
 .gridViewItem img {
     width: 100%;
     border-radius: 10px;
-    box-shadow: 8px 8px 15px #1e002242, -8px -8px 15px #10001430;
+    box-shadow: 8px 8px 15px #1e00222a, -8px -8px 15px #10001430;
 }
 
 .gridViewInfo {

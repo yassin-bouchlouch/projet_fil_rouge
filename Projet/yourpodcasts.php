@@ -82,7 +82,7 @@ $genres = getAllGenres($con);
 				
 
         echo "<div class='gridViewItem'>
-        <span role='link' tabindex='0' onclick='openPage(\"album.php?id=" . $row['id'] . "\")'>
+        <span role='link' tabindex='0' onclick='openPage(\"podcasts.php?id=" . $row['id'] . "\")'>
           <img src='assets/images/artwork/" . $row['artworkPath'] . "'>
 
           <div class='gridViewInfo'>"

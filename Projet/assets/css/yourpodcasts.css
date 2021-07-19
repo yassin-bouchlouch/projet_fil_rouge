@@ -67,7 +67,7 @@ border-radius: 10px;
 border: 1px solid #f24B4B;
 margin-bottom: 15px;
 color: #fff;
-background: #0c0d14;
+background: #0c0d1471;
 outline: none;
 }
 
@@ -105,7 +105,7 @@ padding: 15px;
   border: 1px solid #f24B4B;
   margin-bottom: 15px;
   color: #fff;
-  background: #0c0d14;
+  background: #0c0d1475;
   outline: none;
   width: 100%;
   
@@ -113,6 +113,10 @@ padding: 15px;
 
 .box select option {
   padding: 30px;
+  background: #0c0d14;
+}
+.box select option:hover {
+  background: #f24B4B;
 }
 
 select ::placeholder{
@@ -126,7 +130,7 @@ select ::placeholder{
   border: 1px solid #f24B4B;
   margin-bottom: 15px;
   color: #fff;
-  background: #0c0d14;
+  background: #0c0d1400;
   outline: none;
  }
  button.file-upload-button{
