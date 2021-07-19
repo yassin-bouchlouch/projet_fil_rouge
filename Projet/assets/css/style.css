@@ -230,6 +230,10 @@ body {
     background-color: #0c0d14;
     color: #fff;
 }
+.navItem:visited {
+    background-color: #f24B4B;
+    color: #fff;
+}
 
 .navItemLink .icon {
     position: absolute;
