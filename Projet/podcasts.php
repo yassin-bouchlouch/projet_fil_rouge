@@ -41,13 +41,13 @@ $artistId = $artist->getId();
 		<h1>Add New Album</h1>
 		<form method="post" action="includes/handlers/ajax/uploadNewPodcast.php" enctype="multipart/form-data"> 
 		<div class='form-item'>
-    <label for="title">Title</label>
-      <input class=" input-field" name="title" id="title" class="form-control validate"></input>
+    <label for="name">Name</label>
+      <input class=" input-field" name="name" id="name" class="form-control validate"></input>
     </div>
 
         <div class="form-item">
-        <label for="artwork">Podcast</label>
-          <input type="file" id="artwork" name="artwork" multiple />
+        <label for="song_mp3">Podcast</label>
+          <input type="file" accept=".mp3" id="song_mp3" name="song_mp3" multiple />
         </div>
         
         <div class="form-item box">
