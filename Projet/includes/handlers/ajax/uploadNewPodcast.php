@@ -22,12 +22,12 @@ if(isset($_POST['name'])){
 		if(isset($_FILES['podcast']['error'])){
 			if($_FILES['podcast']['error'] == 0){
 		 
-				$target_dir = "../../../assets/uploads/";
+				$target_dir = "../../../assets/music/";
 				
-				$podcast = time()."_".rand(100000,10000000).rand(100000,10000000)."_".$_FILES["podcast"]["name"];
+				$podcast ="assets".time()."_".rand(100000,10000000).rand(100000,10000000)."_".$_FILES["podcast"]["name"];
 
-				$podcast = str_replace(" ", "_", $podcast);
-				$podcast = urlencode($podcast);
+				// $podcast = str_replace(" ", "_", $podcast);
+				// $podcast = urlencode($podcast);
  
 
 				$source = $_FILES["podcast"]["tmp_name"];
@@ -44,12 +44,11 @@ if(isset($_POST['name'])){
 		$song_date = time();
 		$userLoggedIn = $_SESSION['userLoggedIn'];
 		$name = $_POST['name'];
-		
  
 		$SQL = "INSERT INTO podcasts(
-						title,artist,album,path
+						title,artist,album,genre,path
 					)VALUES(
-						'{$name}',(SELECT id from artists where name = '$userLoggedIn'),'{$albumId}','{$podcast}'
+						'{$name}',(SELECT id from artists where name = '$userLoggedIn'),'{$albumId}',(SELECT genre from albums where id = '$albumId'),'{$podcast}'
 					)
 				";
 
