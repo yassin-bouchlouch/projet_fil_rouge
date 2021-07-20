@@ -7,6 +7,14 @@ else {
 	header("Location: index.php");
 }
 
+if(isset($_GET['id'])) {
+	echo $albumId;
+}
+else {
+	echo "id not set";
+}
+
+
 $album = new Album($con, $albumId);
 $artist = $album->getArtist();
 $artistId = $artist->getId();
@@ -22,7 +30,7 @@ $artistId = $artist->getId();
 		<h2><?php echo $album->getTitle(); ?></h2>
 		<p role="link" tabindex="0" onclick="openPage('artist.php?id=<?php echo $artistId; ?>')">By <?php echo $artist->getName(); ?></p>
 		<p><?php echo $album->getNumberOfPodcast(); ?> Podcasts</p>
-		<button class="button" onclick="togglePopup()">UPLOAD NEW PODCAST</button>
+		<button class="button-green button" onclick="togglePopup()">NEW PODCAST</button>
 		<button class="button"  onclick="deletePlaylist('<?php echo $playlistId; ?>')">DELETE ALBUM</button>
 
 
@@ -38,16 +46,19 @@ $artistId = $artist->getId();
     <div class="close-btn" onclick="togglePopup()">
      ×</div>
      
-		<h1>Add New Album</h1>
+		<h1>Upload New Podcast</h1>
 		<form method="post" action="includes/handlers/ajax/uploadNewPodcast.php" enctype="multipart/form-data"> 
+
+		<input id="albumId" name="albumId" type="hidden" value='<?php echo "$albumId";?>'>
+
 		<div class='form-item'>
     <label for="name">Name</label>
       <input class=" input-field" name="name" id="name" class="form-control validate"></input>
     </div>
 
         <div class="form-item">
-        <label for="song_mp3">Podcast</label>
-          <input type="file" accept=".mp3" id="song_mp3" name="song_mp3" multiple />
+        <label for="podcast">Podcast</label>
+          <input type="file" accept=".mp3" id="podcast" name="podcast" multiple />
         </div>
         
         <div class="form-item box">

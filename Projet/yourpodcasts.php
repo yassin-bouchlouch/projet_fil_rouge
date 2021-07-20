@@ -78,9 +78,7 @@ $genres = getAllGenres($con);
 			}
 
 			while($row = mysqli_fetch_array($yourPodcastsQuery)) {
-
-				
-
+			
         echo "<div class='gridViewItem'>
         <span role='link' tabindex='0' onclick='openPage(\"podcasts.php?id=" . $row['id'] . "\")'>
           <img src='assets/images/artwork/" . $row['artworkPath'] . "'>

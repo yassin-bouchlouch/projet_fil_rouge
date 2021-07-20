@@ -1,50 +1,55 @@
 <?php 
  include("../../config.php");
+ include("../../classes/album.php");
+ 
+ 
 
 
  function message($body,$type){
 	$_SESSION['message']['body'] = $body;
 	$_SESSION['message']['type'] = $type;
 }
-	
+if(isset($_POST['name'])){
+	$albumId = $_POST['albumId'];
+	echo $albumId;
+}
 
 	if(isset($_POST['name'])){
 		$name = "";  
-		$song_mp3 = "";
-
+		$podcast = "";
 		
 
-		if(isset($_FILES['song_mp3']['error'])){
-			if($_FILES['song_mp3']['error'] == 0){
+		if(isset($_FILES['podcast']['error'])){
+			if($_FILES['podcast']['error'] == 0){
 		 
 				$target_dir = "../../../assets/uploads/";
 				
-				$song_mp3 = time()."_".rand(100000,10000000).rand(100000,10000000)."_".$_FILES["song_mp3"]["name"];
+				$podcast = time()."_".rand(100000,10000000).rand(100000,10000000)."_".$_FILES["podcast"]["name"];
 
-				$song_mp3 = str_replace(" ", "_", $song_mp3);
-				$song_mp3 = urlencode($song_mp3);
+				$podcast = str_replace(" ", "_", $podcast);
+				$podcast = urlencode($podcast);
  
 
-				$source = $_FILES["song_mp3"]["tmp_name"];
-				$destinatin = $target_dir.$song_mp3;
+				$source = $_FILES["podcast"]["tmp_name"];
+				$destinatin = $target_dir.$podcast;
 				
 				 if(move_uploaded_file($source, $destinatin)){
 				 	 
 				 }else{
-				 	$song_mp3 = "";
+				 	$podcast = "";
 				 }
 			}
 		}
 
 		$song_date = time();
-
+		$userLoggedIn = $_SESSION['userLoggedIn'];
 		$name = $_POST['name'];
 		
  
-		$SQL = "INSERT INTO songs(
-						song_mp3,song_name
+		$SQL = "INSERT INTO podcasts(
+						title,artist,album,path
 					)VALUES(
-						'{$song_mp3}','{$name}'
+						'{$name}',(SELECT id from artists where name = '$userLoggedIn'),'{$albumId}','{$podcast}'
 					)
 				";
 
