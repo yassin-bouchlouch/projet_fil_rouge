@@ -7,14 +7,6 @@ else {
 	header("Location: index.php");
 }
 
-if(isset($_GET['id'])) {
-	echo $albumId;
-}
-else {
-	echo "id not set";
-}
-
-
 $album = new Album($con, $albumId);
 $artist = $album->getArtist();
 $artistId = $artist->getId();
