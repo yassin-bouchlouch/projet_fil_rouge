@@ -142,7 +142,7 @@ function createPlaylist() {
 }
 
 function deletePlaylist(playlistId) {
-	var prompt = confirm("Are you sure you want to delte this playlist?");
+	var prompt = confirm("Are you sure you want to delete this playlist?");
 
 	if(prompt == true) {
 
