@@ -400,17 +400,29 @@ body {
     cursor: pointer;
     margin-bottom: 10px;
     background-color: #f24B4B;
-    font-weight: 300;
+    font-weight: 600;
     letter-spacing: 2px;
     border: 1px solid #f24B4B;
     border-radius: 10px;
     padding: 15px;
     min-width: 130px;
+    box-shadow: 8px 8px 15px #000000a2;
+
 }
 
-.button.green {
-    background-color: #f24B4B;
-    border-color: #f24B4B;
+.button-white {
+    color: #13141c;
+    cursor: pointer;
+    margin-bottom: 10px;
+    box-shadow: 8px 8px 15px #000000a2;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    padding: 15px;
+    min-width: 130px;
+    background-color: #fbfff1;
+    border-color: #ffffff00;
+    margin-right: .5rem;
 }
 
 .borderBottom {

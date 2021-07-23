@@ -22,7 +22,7 @@ $artistId = $artist->getId();
 		<h2><?php echo $album->getTitle(); ?></h2>
 		<p role="link" tabindex="0" onclick="openPage('artist.php?id=<?php echo $artistId; ?>')">By <?php echo $artist->getName(); ?></p>
 		<p><?php echo $album->getNumberOfPodcast(); ?> Podcasts</p>
-		<button class="button-green button" onclick="togglePopup()">NEW PODCAST</button>
+		<button class="button-white" onclick="togglePopup()">NEW PODCAST</button>
 		<button class="button"  onclick="deleteAlbum('<?php echo $albumId; ?>')">DELETE ALBUM</button>
 
 
