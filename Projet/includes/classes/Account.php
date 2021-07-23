@@ -34,7 +34,7 @@
 
 			if(empty($this->errorArray) == true) {
 				//Insert into db
-				return $this->insertUserDetails($un, $fn, $ln, $em, $pw) && $this->insertArtistDetails($un, $em,);
+				return $this->insertUserDetails($un, $fn, $ln, $em, $pw) && $this->insertArtistDetails($un, $em);
 				
 			}
 			else {
@@ -61,15 +61,15 @@
 		}
 
 		public function insertArtistDetails($un,$em) {
-
-			$result = mysqli_query($this->con, "INSERT INTO artists VALUES ('', '$un',  '$em')");
+			$profilePic = "assets/images/profile-pics/head_emerald.png";
+			$result = mysqli_query($this->con, "INSERT INTO artists VALUES ('', '$un',  '$em','$profilePic')");
 
 			return $result;
 		}
 		
 		private function validateUsername($un) {
 
-			if(strlen($un) > 25 || strlen($un) < 5) {
+			if(strlen($un) > 25 || strlen($un) < 4) {
 				array_push($this->errorArray, Constants::$usernameCharacters);
 				return;
 			}

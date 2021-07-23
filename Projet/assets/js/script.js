@@ -39,12 +39,12 @@ $(document).on("change", "select.playlist", function() {
 	});
 });
 
-function updateProfilePic(emailClass) {
-	var emailValue = $("." + emailClass).val();
+function updateProfilePic(profilePicClass) {
+	var profilePicValue = $("." + profilePicClass).val();
 
-	$.post("includes/handlers/ajax/updateProfilePic.php", { profilePic: emailValue, username: userLoggedIn})
+	$.post("includes/handlers/ajax/updateProfilePic.php", { profilePic: profilePicValue, username: userLoggedIn})
 	.done(function(response) {
-		$("." + emailClass).nextAll(".message").text(response);
+		$("." + profilePicClass).nextAll(".message").text(response);
 	})
 
 

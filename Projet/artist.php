@@ -10,12 +10,27 @@ else {
 
 $artist = new Artist($con, $artistId);
 ?>
+<style>
+	.artist-pic{
+		background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid #f24B4B;
+	width: 165px;
+  height: 165px;
+  box-shadow: 0 0 10px 0 rgba(242, 75, 75, 0.521);
+  border-radius: 100px;
+  z-index: 0;
+	}
+</style>
 
 <div class="entityInfo borderBottom">
 
 	<div class="centerSection">
 
 		<div class="artistInfo">
+		<div class="avatar-container">
+			<img class='artist-pic' src="<?php echo $artist->getArtistPic(); ?>">
+		</div>
 
 			<h1 class="artistName"><?php echo $artist->getName(); ?></h1>
 			<p class="artistEmail"><?php echo $artist->getPodcasterEmail(); ?></p>

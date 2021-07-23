@@ -24,19 +24,20 @@ if(isset($_POST['name'])){
 		 
 				$target_dir = "../../../assets/music/";
 				
-				$podcast ="assets".time()."_".rand(100000,10000000).rand(100000,10000000)."_".$_FILES["podcast"]["name"];
+				$podcast = time()."_".rand(100000,10000000).rand(100000,10000000)."_".$_FILES["podcast"]["name"];
 
 				// $podcast = str_replace(" ", "_", $podcast);
 				// $podcast = urlencode($podcast);
  
 
 				$source = $_FILES["podcast"]["tmp_name"];
-				$destinatin = $target_dir.$podcast;
+				$destination = $target_dir.$podcast;
 				
-				 if(move_uploaded_file($source, $destinatin)){
-				 	 
+				 if(move_uploaded_file($source, $destination)){
+					$podcast = "assets/music/".$podcast;
 				 }else{
-				 	$podcast = "";
+				 	// $podcast = "";
+					 echo "something went wrong";
 				 }
 			}
 		}

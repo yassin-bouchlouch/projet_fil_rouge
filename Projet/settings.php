@@ -28,8 +28,9 @@ include("includes/includedFiles.php");
 					<span id="change" style="display:none">Change Image</span>
 				</label>
 				<input id="file" type="file" onchange="loadFile(event)"/>
-				<img class='setting-profilePic' id="output" src="<?php echo $userLoggedIn->getprofilePic(); ?>">
+				<img class='setting-profilePic profilePic' id="output" name="profilePic" src="<?php echo $userLoggedIn->getprofilePic(); ?>">
 				</div>
+				<button class="button" onclick="updateProfilePic('profilePic')">SAVE</button>
 				</div>
 
 				<div class="userInfo">
