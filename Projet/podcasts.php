@@ -74,7 +74,7 @@ $artistId = $artist->getId();
 
 			echo "<li class='tracklistRow'>
 					<div class='trackCount'>
-						<img class='play' src='assets/images/icons/play-white.png' onclick='setTrack(\"" . $albumSong->getId() . "\", tempPlaylist, true)'>
+						<img class='play' src='assets/images/icons/play.svg' onclick='setTrack(\"" . $albumSong->getId() . "\", tempPlaylist, true)'>
 						<span class='trackNumber'>$i</span>
 					</div>
 
@@ -88,6 +88,13 @@ $artistId = $artist->getId();
 						<input type='hidden' class='songId' value='" . $albumSong->getId() . "'>
 						<img class='optionsButton' src='assets/images/icons/more.png' onclick='showOptionsMenu(this)'>
 					</div>
+
+					<div class='trackOptions'>
+						<input type='hidden' class='songId' value='" . $albumSong->getId() . "'>
+						<img class='removeButton' src='assets/images/icons/remove.svg' onclick='deletePodcast(this)'>
+					</div>
+
+					<h1><?php echo " . $albumSong->getId() . "; ?></h1>
 
 					<div class='trackDuration'>
 						<span class='duration'>" . $albumSong->getDuration() . "</span>

@@ -28,7 +28,7 @@ $(function() {
 		timer = setTimeout(function() {
 			var val = $(".searchInput").val();
 			openPage("search.php?term=" + val);
-		}, 2000);
+		}, 1000);
 
 	})
 

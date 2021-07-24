@@ -30,7 +30,7 @@ include("includes/includedFiles.php");
 				<input id="file" type="file" onchange="loadFile(event)"/>
 				<img class='setting-profilePic profilePic' id="output" name="profilePic" src="<?php echo $userLoggedIn->getprofilePic(); ?>">
 				</div>
-				<button class="button" onclick="updateProfilePic('profilePic')">SAVE</button>
+				<!-- <button class="button" onclick="updateProfilePic('profilePic')">SAVE</button> -->
 				</div>
 
 				<div class="userInfo">

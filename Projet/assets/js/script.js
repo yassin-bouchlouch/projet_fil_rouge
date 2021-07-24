@@ -210,6 +210,26 @@ function deleteAlbum(albumId) {
 	}
 }
 
+function deletePodcast(albumSong) {
+	var prompt = confirm("Are you sure you want to delte this Podcast?");
+
+	if(prompt == true) {
+
+		$.post("includes/handlers/ajax/deletePodcast.php", { albumSong: albumSong })
+		.done(function(error) {
+
+			if(error != "") {
+				alert(error);
+				return;
+			}
+
+			//do something when ajax returns
+			openPage("yourpodcasts.php");
+		});
+
+
+	}
+}
 function hideOptionsMenu() {
 	var menu = $(".optionsMenu");
 	if(menu.css("display") != "none") {

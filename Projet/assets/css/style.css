@@ -340,10 +340,11 @@ body {
 }
 
 .tracklistRow .trackCount img {
-    width: 20px;
+    width: 40px;
     visibility: hidden;
     position: absolute;
     cursor: pointer;
+    color: #fff;
 }
 
 .tracklistRow:hover .trackCount img {
@@ -396,11 +397,13 @@ body {
 
 
 .button {
-    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #13141c;
     cursor: pointer;
     margin-bottom: 10px;
     background-color: #f24B4B;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 16px;
     letter-spacing: 2px;
     border: 1px solid #f24B4B;
     border-radius: 10px;
@@ -411,11 +414,13 @@ body {
 }
 
 .button-white {
+    font-family: Arial, Helvetica, sans-serif;
     color: #13141c;
     cursor: pointer;
     margin-bottom: 10px;
     box-shadow: 8px 8px 15px #000000a2;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 16px;
     letter-spacing: 2px;
     border-radius: 10px;
     padding: 15px;

@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap');
 html, 
 body {
+    box-sizing: border-box;
+	background-color: #13141c;
 	padding: 0;
 	margin: 0;
 	height: 100%;
@@ -15,13 +17,58 @@ body {
 ::selection { background: #f24B4B; }
 
 #background {
-	background-color: #000;
-    background-image: url(../images/bg.jpg);
+    background-image: url(../images/bg2.jpg);
+	background-color: #13141c;
     background-position: center;
     background-size: cover;
     display: table;
     height: 100%;
     width: 100%;
+}
+
+.navbar-container{
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    max-width: 1000px;
+    height: 54px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+.logo{
+    cursor: pointer;
+}
+
+.menu{
+    padding: 28px 17px;
+}
+.sign-up{
+    cursor: pointer;
+    background-color: #f24B4B;
+    color:#13141c ;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border: 1px solid #f24B4B;
+    border-radius: 10px;
+    padding: 10px 17px;
+    min-width: 130px;
+    box-shadow: 4px 4px 7px #000000a2;
+    margin-right: 2rem;
+}
+.sign-in{
+    cursor: pointer;
+    background-color: transparent;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border: 1px solid #f24B4B;
+    border-radius: 10px;
+    padding: 10px 17px;
+    min-width: 130px;
+    box-shadow: 4px 4px 7px #000000a2;
+
 }
 
 #loginContainer * {
@@ -40,7 +87,7 @@ body {
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    #fff;
+    color:    rgba(255, 255, 255, 0.719);
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
    color:    #fff;
@@ -57,56 +104,56 @@ body {
    color:    #fff;
 }
 
-#inputContainer {
-    width: 400px;
-    padding: 45px;
-    float: left;
-    border-right: 1px solid #999;
-    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.438), rgba(255, 255, 255, 0.027) );
-    backdrop-filter: blur(2rem);
-    border: 1px solid rgba(255, 255, 255, 0.062);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.253), 0 6px 6px rgba(0, 0, 0, 0.397);
-    height: 100vh;
-}
 
-#inputContainer h2 {
+
+.content h2 {
 	text-align: center;
+    font-weight: 700 !important;
+    letter-spacing: 2px;
 }
 
-#inputContainer input[type="text"],
-#inputContainer input[type="email"],
-#inputContainer input[type="password"] {
+.content input[type="text"],
+.content input[type="email"],
+.content input[type="password"] {
 	display: block;
-    background-color: transparent;
-    border: 0;
-    border-bottom: 1px solid #fff;
-    height: 27px;
-    line-height: 27px;
     width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #f24B4B;
+    margin-bottom: 15px;
+    color: #fff;
+    background: #0c0d1471;
+    outline: none;
 }
 
-#inputContainer label {
+.content label {
 	color: rgb(255 255 255 / 44%);
     font-size: 13px;
     margin-top: 15px;
     display: block;
 }
 
-#inputContainer button {
-	background-color: transparent;
-    border: 2px solid #fff;
+.content button {
+    font-family: Arial, Helvetica, sans-serif !important;
+	background-color: #f24B4B;
+    border: 2px solid #f24B4B;
     border-radius: 10px;
-    color: #fff;
     display: block;
-    font-size: 14px;
-    letter-spacing: 1px;
+    font-size: 16px;
+    letter-spacing: 2px;
     margin: 20px auto;
     height: 41px;
     width: 100%;
+    color: #13141c !important;
+    font-weight: 700 !important;
+    padding: 10px 17px;
 }
 
-#inputContainer button:hover {
+.content button:hover {
 	cursor: pointer;
+    color: #13141c !important;
+
 }
 
 .hasAccountText span {
@@ -139,6 +186,7 @@ body {
     letter-spacing: 3px;
     line-height: 4rem;
     margin:  0 auto;
+    margin-top: 10vh;
 }
 
 #loginText h2 {
@@ -156,7 +204,7 @@ body {
     background: url(../images/icons/checkmark.png) no-repeat 0 0;
 }
 
-#inputContainer .errorMessage {
+.content .errorMessage {
     color: #f24B4B;
     font-size: 12px;
     display: block;
@@ -173,3 +221,35 @@ input:-webkit-autofill {
 }
 
 input:focus { outline: none; }/*External border line removal*/
+
+.popup .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-150%) scale(0);
+    width: 300px;
+    z-index: 2;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient( to right bottom, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.05) );
+       backdrop-filter: blur(2rem);
+       border: 1px solid rgba(255,255,255,0.3);
+       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.253), 0 6px 6px rgba(0, 0, 0, 0.297);
+    z-index: 1;
+   }
+
+   .popup .close-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    color: #f24B4B;
+    font-size: 30px;
+    
+    }
+   .popup.active .content {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%,-50%) scale(1);
+    }

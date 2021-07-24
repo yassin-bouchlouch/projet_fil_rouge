@@ -73,10 +73,11 @@ outline: none;
 
 
 .second-button {
+  font-family: Arial, Helvetica, sans-serif;
 width: 100%;
-color: white;
+color: #13141c;
 font-size: 18px;
-font-weight: 500;
+font-weight: 700;
 margin-top: 20px;
 padding: 15px 30px;
 border-radius: 10px;
@@ -186,5 +187,5 @@ select ::placeholder{
   transition: all 0.2s ease-in;
 } */
 
-}
+
 

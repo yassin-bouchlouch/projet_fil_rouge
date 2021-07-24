@@ -21,16 +21,38 @@
 
 	<link rel="stylesheet" type="text/css" href="assets/css/register.css">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<script src="assets/js/register.js"></script>
+	<script  src="./script.js"></script>
+	<script>
+		function togglePopup1() {
+	document.getElementById("popup-1")
+	 .classList.toggle("active");
+ }
+		function togglePopup2() {
+	document.getElementById("popup-2")
+	 .classList.toggle("active");
+ }
+	</script>
 </head>
 <body>
+<div class="navbar-container">
+	<div class="logo">
+	<h1>Podcaster</h1>
+</div>
+<div class="menu">
+		<a class="sign-up" onclick="togglePopup1()">SIGN UP</a>
+		<a class="sign-in"  onclick="togglePopup2()">SIGN IN</a>
+</div>
+</div>
+
+		
 	<?php
 
 	if(isset($_POST['registerButton'])) {
 		echo '<script>
 				$(document).ready(function() {
-					$("#loginForm").hide();
+					$("#loginForm").show();
 					$("#registerForm").show();
 				});
 			</script>';
@@ -39,7 +61,7 @@
 		echo '<script>
 				$(document).ready(function() {
 					$("#loginForm").show();
-					$("#registerForm").hide();
+					$("#registerForm").show();
 				});
 			</script>';
 	}
@@ -48,102 +70,99 @@
 	
 
 	<div id="background">
+				<div id="loginText"><h1>Your Voice,<br> Your World</h1></div>															
 
-		<div id="loginContainer">
+		<div class="popup" id="popup-2">			
+				<div class="content">	
+						<div class="close-btn" onclick="togglePopup2()">×</div>
+						<div id="loginContainer">
+								<form id="loginForm" action="register.php" method="POST">
+									<h2>Login to your account</h2>
+										<p>
+											<?php echo $account->getError(Constants::$loginFailed); ?>
+											<label for="loginUsername">Username</label>
+											<input id="loginUsername" name="loginUsername" type="text"  value="<?php getInputValue('loginUsername') ?>" required autocomplete="off">
+										</p>
+										<p>
+											<label for="loginPassword">Password</label>
+											<input id="loginPassword" name="loginPassword" type="password"  required>
+										</p>
 
-			<div id="inputContainer">
-				<form id="loginForm" action="register.php" method="POST">
-					<h2>Login to your account</h2>
-					<p>
-						<?php echo $account->getError(Constants::$loginFailed); ?>
-						<label for="loginUsername">Username</label>
-						<input id="loginUsername" name="loginUsername" type="text"  value="<?php getInputValue('loginUsername') ?>" required autocomplete="off">
-					</p>
-					<p>
-						<label for="loginPassword">Password</label>
-						<input id="loginPassword" name="loginPassword" type="password"  required>
-					</p>
+									<button type="submit" name="loginButton">LOG IN</button>
 
-					<button type="submit" name="loginButton">LOG IN</button>
-
-					<div class="hasAccountText">
-						<span id="hideLogin">Don't have an account yet? Signup here.</span>
-					</div>
-					
-				</form>
+									<div class="hasAccountText">
+										<span id="hideLogin">Don't have an account yet? Signup here.</span>
+									</div>									
+								</form>	
+				</div>	
+			</div>	
+		</div>			
+	</div>
 
 
 
-				<form id="registerForm" action="register.php" method="POST">
+	<div class="popup" id="popup-1">			
+				<div class="content">	
+						<div class="close-btn" onclick="togglePopup1()">×</div>
+						<div id="loginContainer">
+						<form id="registerForm" action="register.php" method="POST">
 					<h2>Create your free account</h2>
 					<p>
 						<?php echo $account->getError(Constants::$usernameCharacters); ?>
 						<?php echo $account->getError(Constants::$usernameTaken); ?>
-						<label for="username">Username</label>
-						<input id="username" name="username" type="text"  value="<?php getInputValue('username') ?>" required>
+						
+						<input id="username" name="username" type="text" placeholder="Username"  value="<?php getInputValue('username') ?>" required>
 					</p>
 
 					<p>
 						<?php echo $account->getError(Constants::$firstNameCharacters); ?>
-						<label for="firstName">First name</label>
-						<input id="firstName" name="firstName" type="text" value="<?php getInputValue('firstName') ?>" required>
+						
+						<input id="firstName" name="firstName" type="text"  placeholder="First Name" value="<?php getInputValue('firstName') ?>" required>
 					</p>
 
 					<p>
 						<?php echo $account->getError(Constants::$lastNameCharacters); ?>
-						<label for="lastName">Last name</label>
-						<input id="lastName" name="lastName" type="text"  value="<?php getInputValue('lastName') ?>" required>
+						
+						<input id="lastName" name="lastName" type="text" placeholder="Last Name"  value="<?php getInputValue('lastName') ?>" required>
 					</p>
 
 					<p>
 						<?php echo $account->getError(Constants::$emailsDoNotMatch); ?>
 						<?php echo $account->getError(Constants::$emailInvalid); ?>
 						<?php echo $account->getError(Constants::$emailTaken); ?>
-						<label for="email">Email</label>
-						<input id="email" name="email" type="email"  value="<?php getInputValue('email') ?>" required>
+						
+						<input id="email" name="email" type="email" placeholder="Email" value="<?php getInputValue('email') ?>" required>
 					</p>
 
 					<p>
-						<label for="email2">Confirm email</label>
-						<input id="email2" name="email2" type="email"  value="<?php getInputValue('email2') ?>" required>
+						
+						<input id="email2" name="email2" type="email" placeholder="Confirm Email" value="<?php getInputValue('email2') ?>" required>
 					</p>
 
 					<p>
 						<?php echo $account->getError(Constants::$passwordsDoNoMatch); ?>
 						<?php echo $account->getError(Constants::$passwordNotAlphanumeric); ?>
 						<?php echo $account->getError(Constants::$passwordCharacters); ?>
-						<label for="password">Password</label>
-						<input id="password" name="password" type="password"  required>
+						
+						<input id="password" name="password" type="password" placeholder="Password"  required>
 					</p>
 
 					<p>
-						<label for="password2">Confirm password</label>
-						<input id="password2" name="password2" type="password"  required>
+						
+						<input id="password2" name="password2" type="password" placeholder="Confirm Password" required>
 					</p>
 
 					<button type="submit" name="registerButton">SIGN UP</button>
 
-					<div class="hasAccountText">
-						<span id="hideRegister">Already have an account? Log in here.</span>
-					</div>
+			
 					
-				</form>
+				</form>		
 
-
-			</div>
-
-			<div id="loginText">
-				<h1>Your Voice,<br> Your World</h1>
-				<!-- <h2>Listen to loads of podcasts for free</h2>
-				<ul>
-					<li>Discover Podcasts you'll fall in love with</li>
-					<li>Create your own Podcasts</li>
-					<li>Follow Podcasters to keep up to date</li>
-				</ul> -->
-			</div>
-
-		</div>
+				</div>	
+			</div>	
+		</div>			
 	</div>
+
 
 </body>
 </html>

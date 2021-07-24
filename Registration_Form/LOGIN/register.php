@@ -17,10 +17,12 @@
 
 <html>
 <head>
-	<title>Welcome to Slotify!</title>
+	<title>Welcome to Podcaster</title>
 </head>
 <body>
 
+<button class="button-white" onclick="togglePopup()">NEW PODCAST</button>
+		<button class="button"  onclick="deleteAlbum('<?php echo $albumId; ?>')">DELETE ALBUM</button>
 	<div id="inputContainer">
 		<form id="loginForm" action="register.php" method="POST">
 			<h2>Login to your account</h2>
