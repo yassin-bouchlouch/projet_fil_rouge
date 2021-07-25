@@ -70,7 +70,12 @@
 	
 
 	<div id="background">
-				<div id="loginText"><h1>Your Voice,<br> Your World</h1></div>															
+				<div id="loginText"><h1>Your Voice,<br> Your World</h1></div>	
+				
+				<!-- <div>
+				  <p>Don't have an account yet? Signup here.</p>
+					<a class="sign-up">Create Your Account</a>
+				</div>	 -->
 
 		<div class="popup" id="popup-2">			
 				<div class="content">	
@@ -90,9 +95,7 @@
 
 									<button type="submit" name="loginButton">LOG IN</button>
 
-									<div class="hasAccountText">
-										<span id="hideLogin">Don't have an account yet? Signup here.</span>
-									</div>									
+																
 								</form>	
 				</div>	
 			</div>	

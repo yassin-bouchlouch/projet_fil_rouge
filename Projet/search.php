@@ -11,7 +11,7 @@ else {
 
 <div class="searchContainer">
 
-	<input type="text" class=" search searchInput" value="<?php echo $term; ?>" placeholder="Start typing..." onfocus="this.value = this.value">
+	<input type="text" class=" search searchInput" value="<?php echo $term; ?>" placeholder="Search for Something..." onfocus="this.value = this.value">
 
 </div>
 

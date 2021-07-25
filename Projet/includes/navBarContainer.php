@@ -19,6 +19,8 @@
 				<span role="link" tabindex="0" onclick="openPage('settings.php')" class="navItemLink"><?php echo $userLoggedIn->getFirstName(); ?></span>
 			</div>
 
+		
+
 			<div class="navItem">
 				<img class='icon' src='assets/images/icons/headphones.svg'>
 				<span role="link" tabindex="0" onclick="openPage('browse.php')" class="navItemLink">Browse</span>
@@ -32,6 +34,11 @@
 			<div class="navItem">
 				<img class='icon' src='assets/images/icons/heart.svg'>
 				<span role="link" tabindex="0" onclick="openPage('yourLikes.php')" class="navItemLink">Your Likes</span>
+			</div>
+			
+	<div class="navItem">
+				<img class='icon' src='assets/images/icons/search.svg'>
+				<span role="link" tabindex="0" onclick="openPage('search.php')" class="navItemLink">Search</span>
 			</div>
 
 			<div class="navItem">

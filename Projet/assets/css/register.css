@@ -54,7 +54,6 @@ body {
     border: 1px solid #f24B4B;
     border-radius: 10px;
     padding: 10px 17px;
-    min-width: 130px;
     box-shadow: 4px 4px 7px #000000a2;
     margin-right: 2rem;
 }
@@ -66,7 +65,6 @@ body {
     border: 1px solid #f24B4B;
     border-radius: 10px;
     padding: 10px 17px;
-    min-width: 130px;
     box-shadow: 4px 4px 7px #000000a2;
 
 }
@@ -134,7 +132,7 @@ body {
     display: block;
 }
 
-.content button {
+button {
     font-family: Arial, Helvetica, sans-serif !important;
 	background-color: #f24B4B;
     border: 2px solid #f24B4B;

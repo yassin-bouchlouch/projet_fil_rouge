@@ -27,7 +27,7 @@ body {
 
 #nowPlayingBarContainer {
 	width: 100%;
-    /* background-color: #282828; */
+    /* background-color: #0c0d14; */
     
     background: linear-gradient( to right bottom, rgba(0, 0, 0, 0.438), rgba(0, 0, 0, 0.26) );
     backdrop-filter: blur(2rem);
@@ -446,8 +446,11 @@ body {
 }
 
 .searchContainer {
-    background-color: #18191b;
+    border: 1px solid #f24B4B;
+    margin-top: 10vh;
+    background-color: #0c0d14;
     padding: 20px 28px;
+    border-radius: 10px;
 }
 
 .searchContainer h4 {
@@ -461,8 +464,11 @@ body {
     border: none;
     color: #fff;
     font-weight: 700;
-    font-size: 62px;
+    font-size: 2rem;
     letter-spacing: 2px;
+}
+.searchContainer ::placeholder {
+  color: #f24B4B;
 }
 
 input:focus {
@@ -474,7 +480,7 @@ input:focus {
 }
 
 .searchResultRow:hover {
-    background-color: #282828;
+    background-color: #0c0d14;
 }
 
 .searchResultRow .artistName span {
@@ -502,7 +508,7 @@ input:focus {
 
 .optionsMenu {
     position: fixed;
-    background-color: #282828;
+    background-color: #0c0d14;
     width: 200px;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 10px;
@@ -518,7 +524,7 @@ input:focus {
     color: rgba(147, 147, 147, 0.8);
     cursor: pointer;
     height: 40px;
-    background-color: #282828;
+    background-color: #0c0d14;
     font-size: 14px;
 }
 
@@ -601,52 +607,26 @@ img.icon {
     border: 2px solid #f24B4B;
  
 }
-/* .searchBar{
-    margin-top: 10vh;
-    width: 100%;
-    border: 1px solid #f24B4B;
-    border-radius: 10px;
-    display: flex;
-    padding: 10px 0;
-    position: relative;
-    align-items: center;
-} */
 
 .search {
     width: 100%;
     position: relative;
     display: flex;
-    margin-top: 10vh;
+   
   }
   
-  .searchTerm {
-    width: 70%;
-    border: 2px solid #f24B4B;
-    border-right: none;
-    padding: 5px;
-    height: 3rem;
-    border-radius: 10px 0 0 10px;
-    outline: none;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0);
-  }
   
-  .searchTerm:focus{
-    color: #f24B4B;
-  }
-  
-  .searchButton {
-    width: 4rem;
-    height: 3rem;
-    border: 2px solid #f24B4B;
-    background: #f24B4B;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 10px 10px 0;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  .search-icon{
-      width: 30px!important;
-  }
-  
+
+  @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+
+    #navBarContainer{
+        display: none;
+    }
+    #mainViewContainer {
+        margin-left: 10vw;
+        width: 100%;
+}
