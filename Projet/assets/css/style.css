@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap');
+
 
 html, body {
 	padding: 0;
@@ -195,16 +197,23 @@ body {
 }
 
 .logo {
-    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-family: 'Kanit', sans-serif;
+    cursor: pointer;
+    font-weight: 200;
+    font-size: 1.3rem;
+    margin:0 auto ;
+    padding: 25px;
+    color: #f24B4B;
 }
 
 .logo img {
-    width: 32px;
+    
 }
 
 .navBar .group {
-    border-top: 1px solid #a0a0a0;
     padding: 10px 0;
+    margin-top: 5vh;
 }
 
 .navItem {

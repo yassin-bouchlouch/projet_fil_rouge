@@ -2,7 +2,7 @@
 	<nav class="navBar">
 
 		<span role="link" tabindex="0" onclick="openPage('index.php')" class="logo">
-			<!-- <img src="assets/images/icons/logo.png"> -->Podcast
+			<!-- <img src="assets/images/icons/logo.png"> -->Podcaster
 		</span>
 
 

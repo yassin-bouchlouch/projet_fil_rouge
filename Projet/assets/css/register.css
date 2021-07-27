@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;600&display=swap');
 html, 
 body {
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 	background-color: #13141c;
 	padding: 0;
 	margin: 0;
 	height: 100%;
+
 }
 
 *:focus {
@@ -17,7 +20,7 @@ body {
 ::selection { background: #f24B4B; }
 
 #background {
-    background-image: url(../images/bg2.jpg);
+    background-image: url(../images/bg3.jpg);
 	background-color: #13141c;
     background-position: center;
     background-size: cover;
@@ -39,13 +42,17 @@ body {
 }
 
 .logo{
+    text-transform: uppercase;
+    font-family: 'Kanit', sans-serif;
     cursor: pointer;
+    font-weight: 200;
 }
 
 .menu{
     padding: 28px 17px;
 }
 .sign-up{
+    font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
     background-color: #f24B4B;
     color:#13141c ;
@@ -170,37 +177,35 @@ button {
 }
 
 #loginText {
-    padding: 45px;
-    display: table-cell;
-    text-align: center;
+    margin-top: 20vh;
+    padding: 15px;
+    margin-left: 10vw;
 }
 
 #loginText h1 {
     color: #f24B4B;
-    font-size: 60px;
+    font-size: 4rem;
     font-weight: bold;
     font-family: 'Kanit', sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
     line-height: 4rem;
-    margin:  0 auto;
-    margin-top: 10vh;
+   
 }
 
-#loginText h2 {
-    margin: 35px 0;
+#loginText p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 2rem;
+
 }
 
-#loginText ul {
-    padding: 0;
-}
 
-#loginText li {
-    font-size: 20px;
-    list-style-type: none;
-    padding: 5px 30px;
-    background: url(../images/icons/checkmark.png) no-repeat 0 0;
-}
+
+
 
 .content .errorMessage {
     color: #f24B4B;
