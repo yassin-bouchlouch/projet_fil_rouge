@@ -70,12 +70,15 @@
 	
 
 	<div id="background">
-				<div id="loginText"><h1>Your Voice,<br> Your World</h1></div>	
+				<div id="loginText">
+				<h1>Your Voice,<br> Your World</h1>
+				<div>
+				  <p>Don't have an account yet?<br> Signup here.</p>
+					<a class="sign-up" onclick="togglePopup1()">SIGN UP</a>
+				</div>
+				</div>	
 				
-				<!-- <div>
-				  <p>Don't have an account yet? Signup here.</p>
-					<a class="sign-up">Create Your Account</a>
-				</div>	 -->
+					
 
 		<div class="popup" id="popup-2">			
 				<div class="content">	
